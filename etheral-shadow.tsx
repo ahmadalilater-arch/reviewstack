@@ -36,7 +36,7 @@ function mapRange(
 
 export function EtheralShadow({
   sizing = 'fill',
-  color = 'rgba(109, 40, 217, 1)',
+  color = 'rgba(14, 165, 233, 1)',
   animation,
   noise,
   style,

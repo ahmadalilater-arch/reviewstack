@@ -44,7 +44,7 @@
   --border-strong:  #B8B0A4;
   --border-medium:  #C4BDB5;
 
-  /* Brand — Sky Blue, zero purple */
+  /* Brand — Sky Blue */
   --brand-600: #0284C7;
   --brand-500: #0EA5E9;
   --brand-400: #38BDF8;
@@ -52,15 +52,15 @@
   --brand-200: #BAE6FD;
   --brand-subtle: #F0F9FF;
 
-  /* Accent — Red for danger/action CTAs */
+  /* Accent — Red for primary CTAs and danger */
   --accent-red:       #EF4444;
   --accent-red-hover: #DC2626;
   --accent-red-subtle:#FEF2F2;
 
-  /* Growth green — positive metric CTA */
-  --accent-primary:       #16A34A;
-  --accent-primary-hover: #15803D;
-  --accent-primary-subtle:#DCFCE7;
+  /* Brand Primary (Sky Blue) aliases for consistency */
+  --accent-primary:       #0EA5E9;
+  --accent-primary-hover: #0284C7;
+  --accent-primary-subtle:#F0F9FF;
 
   /* Status */
   --status-danger:        #DC2626;
@@ -121,9 +121,9 @@
   --accent-red-hover: #EF4444;
   --accent-red-subtle: rgba(239,68,68,0.1);
 
-  --accent-primary:       #22C55E;
-  --accent-primary-hover: #16A34A;
-  --accent-primary-subtle: rgba(34,197,94,0.1);
+  --accent-primary:       #38BDF8;
+  --accent-primary-hover: #0EA5E9;
+  --accent-primary-subtle: rgba(14,165,233,0.1);
 
   /* Status */
   --status-danger:        #F87171;
@@ -414,11 +414,11 @@ p { color: var(--text-secondary); }
 .shimmer-text {
   background: linear-gradient(
     90deg,
-    #fda4af 0%,
-    #7dd3fc 25%,
+    #7dd3fc 0%,
+    #0ea5e9 25%,
     #ffffff 50%,
-    #7dd3fc 75%,
-    #fda4af 100%
+    #ef4444 75%,
+    #7dd3fc 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;

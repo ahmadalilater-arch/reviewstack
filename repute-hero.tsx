@@ -26,11 +26,11 @@ export const ReputeHero = memo(function ReputeHero({ onStart }: ReputeHeroProps)
 
   // Wave colors — light pink + rose + warm gold — NO purple
   const waveColors = [
-    "rgba(253, 164, 175, 0.85)",  // rose-300   — soft pink
-    "rgba(251, 113, 133, 0.80)",  // rose-400   — warm pink
-    "rgba(249, 168, 212, 0.75)",  // pink-300   — light blush
-    "rgba(254, 205, 211, 0.65)",  // rose-200   — pale blush
-    "rgba(251, 191, 36,  0.50)",  // amber-400  — warm gold
+    "rgba(253, 164, 175, 0.85)",  // red-300   — soft pink
+    "rgba(251, 113, 133, 0.80)",  // red-400   — warm pink
+    "rgba(249, 168, 212, 0.75)",  // red-300   — light blush
+    "rgba(254, 205, 211, 0.65)",  // red-200   — pale blush
+    "rgba(251, 191, 36,  0.50)",  // red-400  — warm gold
   ];
 
   // Background fill adapts to theme
@@ -39,7 +39,7 @@ export const ReputeHero = memo(function ReputeHero({ onStart }: ReputeHeroProps)
   // Headline gradient changes per theme
   const headlineGradient = isDark
     ? "linear-gradient(135deg, #fda4af 0%, #f9a8d4 35%, #ffffff 60%, #fecdd3 100%)"
-    : "linear-gradient(135deg, #be123c 0%, #e11d48 35%, #9f1239 65%, #f43f5e 100%)";
+    : "linear-gradient(135deg, #be123c 0%, #e11d48 35%, #9f1239 65%, #ef4444 100%)";
 
   // Overlay adapts to theme
   const overlayGradient = isDark
@@ -55,13 +55,13 @@ export const ReputeHero = memo(function ReputeHero({ onStart }: ReputeHeroProps)
   const textColor = isDark ? "text-white" : "text-[#0D1117]";
   const subTextColor = isDark ? "text-white/60" : "text-[#3D4350]";
   const accentTextColor = isDark ? "text-white/90" : "text-[#0D1117]";
-  const badgeBg = isDark ? "bg-black/35 border-white/10" : "bg-white/60 border-rose-200/60";
-  const badgeText = isDark ? "text-white/70" : "text-rose-900/80";
-  const pillBg = isDark ? "bg-black/25 border-white/[0.09]" : "bg-white/50 border-rose-200/50";
+  const badgeBg = isDark ? "bg-black/35 border-white/10" : "bg-white/60 border-red-200/60";
+  const badgeText = isDark ? "text-white/70" : "text-red-900/80";
+  const pillBg = isDark ? "bg-black/25 border-white/[0.09]" : "bg-white/50 border-red-200/50";
   const pillText = isDark ? "text-white/55" : "text-[#3D4350]";
   const secondaryBtnBg = isDark
     ? "border-white/15 bg-white/5 text-white/80 hover:bg-white/10 hover:border-white/25 hover:text-white"
-    : "border-rose-300/40 bg-white/50 text-rose-900/80 hover:bg-white/80 hover:border-rose-400/60 hover:text-rose-900";
+    : "border-red-300/40 bg-white/50 text-red-900/80 hover:bg-white/80 hover:border-red-400/60 hover:text-red-900";
 
   return (
     <section
@@ -86,7 +86,7 @@ export const ReputeHero = memo(function ReputeHero({ onStart }: ReputeHeroProps)
         style={{ background: overlayGradient }}
       />
 
-      {/* ── Center atmospheric bloom — rose/pink ── */}
+      {/* ── Center atmospheric bloom — sky/red ── */}
       <div
         aria-hidden
         className="absolute inset-0 z-[1] pointer-events-none"
@@ -104,8 +104,8 @@ export const ReputeHero = memo(function ReputeHero({ onStart }: ReputeHeroProps)
         <div style={fade(80)} className="mb-8">
           <span className={`inline-flex items-center gap-2 rounded-full border ${badgeBg} ${badgeText} px-4 py-1.5 text-[11px] uppercase tracking-widest backdrop-blur-sm`}>
             <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-sky-400" />
             </span>
             2,400+ businesses trust Repute
           </span>
@@ -175,9 +175,9 @@ export const ReputeHero = memo(function ReputeHero({ onStart }: ReputeHeroProps)
         {/* Trust pills */}
         <div className="mt-14 flex flex-wrap justify-center gap-3" style={fade(570)}>
           {[
-            { icon: <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />, label: "4.8★ avg after 60 days" },
-            { icon: <Shield className="w-3.5 h-3.5 text-rose-400" />, label: "Reputation firewall built-in" },
-            { icon: <TrendingUp className="w-3.5 h-3.5 text-emerald-500" />, label: "480K+ reviews generated" },
+            { icon: <Star className="w-3.5 h-3.5 text-red-500 fill-red-500" />, label: "4.8★ avg after 60 days" },
+            { icon: <Shield className="w-3.5 h-3.5 text-red-400" />, label: "Reputation firewall built-in" },
+            { icon: <TrendingUp className="w-3.5 h-3.5 text-sky-500" />, label: "480K+ reviews generated" },
           ].map((item) => (
             <div
               key={item.label}
@@ -194,8 +194,8 @@ export const ReputeHero = memo(function ReputeHero({ onStart }: ReputeHeroProps)
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
           style={fade(700)}
         >
-          <span className={`text-[10px] uppercase tracking-widest ${isDark ? "text-white/25" : "text-rose-900/30"}`}>Scroll</span>
-          <div className={`w-px h-8 bg-gradient-to-b ${isDark ? "from-white/20" : "from-rose-400/30"} to-transparent`} />
+          <span className={`text-[10px] uppercase tracking-widest ${isDark ? "text-white/25" : "text-red-900/30"}`}>Scroll</span>
+          <div className={`w-px h-8 bg-gradient-to-b ${isDark ? "from-white/20" : "from-red-400/30"} to-transparent`} />
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@ interface NeuralBackgroundProps {
   className?: string;
   /**
    * Color of the particles.
-   * Defaults to a cyan/indigo mix if not specified.
+   * Defaults to a cyan/sky mix if not specified.
    */
   color?: string;
   /**
@@ -26,7 +26,7 @@ interface NeuralBackgroundProps {
 
 export default function NeuralBackground({
   className,
-  color = "#6366f1", // Default Indigo
+  color = "#0284c7", // Default Indigo
   trailOpacity = 0.15,
   particleCount = 600,
   speed = 1,

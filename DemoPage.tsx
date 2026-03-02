@@ -25,7 +25,7 @@ export function DemoPage() {
   };
 
   return (
-    <div className="pt-16 min-h-screen bg-gradient-to-br from-slate-100 to-violet-100 flex items-center justify-center p-6">
+    <div className="pt-16 min-h-screen bg-gradient-to-br from-slate-100 to-sky-100 flex items-center justify-center p-6">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
           <h1 className="text-2xl font-extrabold text-slate-900 mb-2">Live Demo</h1>
@@ -37,7 +37,7 @@ export function DemoPage() {
           <div className="bg-white rounded-[2rem] overflow-hidden">
 
             {/* Phone header */}
-            <div className="bg-gradient-to-r from-violet-600 to-indigo-600 px-5 py-4 text-white">
+            <div className="bg-gradient-to-r from-sky-600 to-sky-600 px-5 py-4 text-white">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                   {business.icon}
@@ -54,7 +54,7 @@ export function DemoPage() {
               {/* Step 1: Message */}
               {step === "message" && (
                 <>
-                  <div className="bg-violet-50 rounded-2xl rounded-tl-sm p-4 text-sm text-slate-700 leading-relaxed shadow-sm">
+                  <div className="bg-sky-50 rounded-2xl rounded-tl-sm p-4 text-sm text-slate-700 leading-relaxed shadow-sm">
                     Hi Maria! 👋 Thank you for staying with us at <span className="font-semibold">The Grand Palms Hotel</span>. We hope your stay was wonderful. How would you rate your overall experience with us?
                   </div>
 
@@ -63,14 +63,14 @@ export function DemoPage() {
                     <div className="grid grid-cols-2 gap-3">
                       <button
                         onClick={() => setStep("positive")}
-                        className="flex flex-col items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-2xl py-4 font-semibold text-sm transition-all hover:scale-105 shadow-md"
+                        className="flex flex-col items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white rounded-2xl py-4 font-semibold text-sm transition-all hover:scale-105 shadow-md"
                       >
                         <ThumbsUp className="w-6 h-6" />
                         Loved it! 😍
                       </button>
                       <button
                         onClick={() => setStep("negative")}
-                        className="flex flex-col items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white rounded-2xl py-4 font-semibold text-sm transition-all hover:scale-105 shadow-md"
+                        className="flex flex-col items-center gap-2 bg-red-500 hover:bg-red-600 text-white rounded-2xl py-4 font-semibold text-sm transition-all hover:scale-105 shadow-md"
                       >
                         <ThumbsDown className="w-6 h-6" />
                         Had issues 😕
@@ -83,17 +83,17 @@ export function DemoPage() {
               {/* Step 2a: Positive → Google Maps */}
               {step === "positive" && (
                 <>
-                  <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 text-center">
+                  <div className="bg-sky-50 border border-sky-200 rounded-2xl p-4 text-center">
                     <div className="text-3xl mb-2">🎉</div>
-                    <div className="font-bold text-emerald-800 mb-1">That's amazing to hear!</div>
-                    <p className="text-xs text-emerald-700">We're so glad you enjoyed your stay at The Grand Palms Hotel. Would you mind sharing your experience on Google? It really helps us!</p>
+                    <div className="font-bold text-sky-800 mb-1">That's amazing to hear!</div>
+                    <p className="text-xs text-sky-700">We're so glad you enjoyed your stay at The Grand Palms Hotel. Would you mind sharing your experience on Google? It really helps us!</p>
                   </div>
 
                   <div className="flex justify-center gap-1 my-2">
                     {[1, 2, 3, 4, 5].map((s) => (
                       <Star
                         key={s}
-                        className={`w-7 h-7 cursor-pointer transition-all ${s <= (hoverRating || rating) ? "text-yellow-400 fill-yellow-400 scale-110" : "text-slate-300"}`}
+                        className={`w-7 h-7 cursor-pointer transition-all ${s <= (hoverRating || rating) ? "text-red-400 fill-red-400 scale-110" : "text-slate-300"}`}
                         onMouseEnter={() => setHoverRating(s)}
                         onMouseLeave={() => setHoverRating(0)}
                         onClick={() => setRating(s)}
@@ -105,7 +105,7 @@ export function DemoPage() {
                     href={business.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-xl py-3 font-bold text-sm shadow-lg hover:scale-105 transition-all"
+                    className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-sky-600 to-sky-600 text-white rounded-xl py-3 font-bold text-sm shadow-lg hover:scale-105 transition-all"
                   >
                     ⭐ Leave a Google Review
                     <ExternalLink className="w-4 h-4" />
@@ -124,10 +124,10 @@ export function DemoPage() {
               {/* Step 2b: Negative → Private feedback */}
               {step === "negative" && !submitted && (
                 <>
-                  <div className="bg-rose-50 border border-rose-200 rounded-2xl p-4">
+                  <div className="bg-red-50 border border-red-200 rounded-2xl p-4">
                     <div className="text-2xl mb-1 text-center">😔</div>
-                    <div className="font-bold text-rose-800 text-sm text-center mb-1">We're sorry to hear that!</div>
-                    <p className="text-xs text-rose-700 text-center">Your experience matters to us. Please share what went wrong — our manager will personally follow up.</p>
+                    <div className="font-bold text-red-800 text-sm text-center mb-1">We're sorry to hear that!</div>
+                    <p className="text-xs text-red-700 text-center">Your experience matters to us. Please share what went wrong — our manager will personally follow up.</p>
                   </div>
 
                   <div>
@@ -137,14 +137,14 @@ export function DemoPage() {
                       onChange={(e) => setFeedbackText(e.target.value)}
                       placeholder="Please describe your experience..."
                       rows={4}
-                      className="w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-violet-400 resize-none text-slate-700 bg-slate-50"
+                      className="w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-sky-400 resize-none text-slate-700 bg-slate-50"
                     />
                   </div>
 
                   <button
                     onClick={() => { if (feedbackText.trim()) { setSubmitted(true); setStep("feedback-sent"); } }}
                     disabled={!feedbackText.trim()}
-                    className="w-full bg-rose-500 hover:bg-rose-600 text-white rounded-xl py-3 font-semibold text-sm transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow"
+                    className="w-full bg-red-500 hover:bg-red-600 text-white rounded-xl py-3 font-semibold text-sm transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow"
                   >
                     <MessageSquare className="w-4 h-4 inline mr-1.5" />
                     Submit Private Feedback
@@ -159,10 +159,10 @@ export function DemoPage() {
               {/* Step 3: Feedback submitted */}
               {step === "feedback-sent" && (
                 <>
-                  <div className="bg-violet-50 border border-violet-200 rounded-2xl p-5 text-center">
+                  <div className="bg-sky-50 border border-sky-200 rounded-2xl p-5 text-center">
                     <div className="text-3xl mb-3">✅</div>
-                    <div className="font-bold text-violet-900 mb-1">Thank you for your feedback!</div>
-                    <p className="text-xs text-violet-700 leading-relaxed">Your response has been privately sent to The Grand Palms Hotel. A manager will reach out to you personally to make it right.</p>
+                    <div className="font-bold text-sky-900 mb-1">Thank you for your feedback!</div>
+                    <p className="text-xs text-sky-700 leading-relaxed">Your response has been privately sent to The Grand Palms Hotel. A manager will reach out to you personally to make it right.</p>
                   </div>
 
                   <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-600">
@@ -171,7 +171,7 @@ export function DemoPage() {
 
                   <button
                     onClick={reset}
-                    className="w-full flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white rounded-xl py-3 font-semibold text-sm transition-all shadow"
+                    className="w-full flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-700 text-white rounded-xl py-3 font-semibold text-sm transition-all shadow"
                   >
                     <RotateCcw className="w-4 h-4" />
                     Restart Demo
@@ -184,14 +184,14 @@ export function DemoPage() {
 
         {/* Legend */}
         <div className="mt-8 grid grid-cols-2 gap-3 text-xs text-slate-600">
-          <div className="bg-white rounded-xl border border-emerald-200 p-3 text-center">
-            <ThumbsUp className="w-4 h-4 text-emerald-500 mx-auto mb-1" />
-            <strong className="text-emerald-700">Happy customers</strong>
+          <div className="bg-white rounded-xl border border-sky-200 p-3 text-center">
+            <ThumbsUp className="w-4 h-4 text-sky-500 mx-auto mb-1" />
+            <strong className="text-sky-700">Happy customers</strong>
             <p className="text-slate-400 mt-0.5">→ Directed to Google Maps review page</p>
           </div>
-          <div className="bg-white rounded-xl border border-rose-200 p-3 text-center">
-            <ThumbsDown className="w-4 h-4 text-rose-500 mx-auto mb-1" />
-            <strong className="text-rose-600">Unhappy customers</strong>
+          <div className="bg-white rounded-xl border border-red-200 p-3 text-center">
+            <ThumbsDown className="w-4 h-4 text-red-500 mx-auto mb-1" />
+            <strong className="text-red-600">Unhappy customers</strong>
             <p className="text-slate-400 mt-0.5">→ Private feedback sent to you only</p>
           </div>
         </div>

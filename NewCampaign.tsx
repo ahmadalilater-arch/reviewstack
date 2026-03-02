@@ -233,7 +233,7 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
   const resolvedTemplate = messageTemplate.replace("{name}", "the customer").replace("{business}", businessName || "Your Business");
 
   /* ── shared input class ─── */
-  const inputCls = "w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.06] transition-all";
+  const inputCls = "w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-sky-500/50 focus:bg-white/[0.06] transition-all";
 
   return (
     <div className="pt-[73px] min-h-screen">
@@ -241,7 +241,7 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
 
         {/* Header */}
         <div className="mb-12 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/20 bg-violet-500/[0.07] text-violet-400 text-xs font-bold tracking-widest uppercase mb-5">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-sky-500/20 bg-sky-500/[0.07] text-sky-400 text-xs font-bold tracking-widest uppercase mb-5">
             <Send className="w-3 h-3" /> New Campaign
           </div>
           <h1 className="text-3xl font-black text-white tracking-tight mb-3">Launch Your Review Campaign</h1>
@@ -260,19 +260,19 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
               >
                 <span className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black border-2 transition-all flex-shrink-0 ${
                   step > i + 1
-                    ? "bg-violet-500 border-violet-500 text-white shadow-[0_0_12px_rgba(139,92,246,0.4)]"
+                    ? "bg-sky-500 border-sky-500 text-white shadow-[0_0_12px_rgba(139,92,246,0.4)]"
                     : step === i + 1
-                    ? "border-violet-400 text-violet-400 bg-violet-500/10"
+                    ? "border-sky-400 text-sky-400 bg-sky-500/10"
                     : "border-white/[0.08] text-zinc-600 bg-white/[0.02]"
                 }`}>
                   {step > i + 1 ? <CheckCircle2 className="w-3.5 h-3.5" /> : i + 1}
                 </span>
                 <span className={`hidden sm:inline text-xs font-semibold transition-colors ${
-                  step === i + 1 ? "text-white" : step > i + 1 ? "text-violet-400" : "text-zinc-600"
+                  step === i + 1 ? "text-white" : step > i + 1 ? "text-sky-400" : "text-zinc-600"
                 }`}>{s}</span>
               </button>
               {i < steps.length - 1 && (
-                <div className={`h-px w-6 md:w-10 mx-1 transition-colors ${step > i + 1 ? "bg-violet-500/60" : "bg-white/[0.06]"}`} />
+                <div className={`h-px w-6 md:w-10 mx-1 transition-colors ${step > i + 1 ? "bg-sky-500/60" : "bg-white/[0.06]"}`} />
               )}
             </div>
           ))}
@@ -286,8 +286,8 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
             {step === 1 && (
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-violet-400" />
+                  <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-sky-400" />
                   </div>
                   <div>
                     <h2 className="text-white font-black text-lg">Business Information</h2>
@@ -314,7 +314,7 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
                         onClick={() => handleBusinessTypeChange(type.key)}
                         className={`py-3 px-2 rounded-xl border text-center transition-all flex flex-col items-center gap-1 ${
                           businessType === type.key
-                            ? "bg-violet-500/15 border-violet-500/40 text-violet-300 shadow-[0_0_15px_rgba(139,92,246,0.15)]"
+                            ? "bg-sky-500/15 border-sky-500/40 text-sky-300 shadow-[0_0_15px_rgba(139,92,246,0.15)]"
                             : "border-white/[0.06] bg-white/[0.02] text-zinc-500 hover:border-white/[0.12] hover:text-zinc-300"
                         }`}
                       >
@@ -348,7 +348,7 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
                         onClick={() => setContactMethod(m)}
                         className={`flex-1 py-3.5 rounded-xl border text-sm font-bold uppercase tracking-wide transition-all flex items-center justify-center gap-2 ${
                           contactMethod === m
-                            ? "bg-violet-500/15 border-violet-500/40 text-violet-300 shadow-[0_0_20px_rgba(139,92,246,0.12)]"
+                            ? "bg-sky-500/15 border-sky-500/40 text-sky-300 shadow-[0_0_20px_rgba(139,92,246,0.12)]"
                             : "border-white/[0.06] bg-white/[0.02] text-zinc-500 hover:text-zinc-300 hover:border-white/[0.1]"
                         }`}
                       >
@@ -365,8 +365,8 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
             {step === 2 && (
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center">
-                    <Upload className="w-5 h-5 text-indigo-400" />
+                  <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center">
+                    <Upload className="w-5 h-5 text-sky-400" />
                   </div>
                   <div>
                     <h2 className="text-white font-black text-lg">Import Contacts</h2>
@@ -400,8 +400,8 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
                     onClick={() => fileInputRef.current?.click()}
                     className={`border-2 border-dashed rounded-2xl p-12 text-center cursor-pointer transition-all ${
                       isDragging
-                        ? "border-violet-500/60 bg-violet-500/[0.08]"
-                        : "border-white/[0.08] hover:border-violet-500/40 hover:bg-violet-500/[0.04]"
+                        ? "border-sky-500/60 bg-sky-500/[0.08]"
+                        : "border-white/[0.08] hover:border-sky-500/40 hover:bg-sky-500/[0.04]"
                     }`}
                   >
                     <Upload className="w-10 h-10 text-zinc-600 mx-auto mb-3" />
@@ -424,11 +424,11 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
                         className={`${inputCls} flex-1`}
                       />
                       <button onClick={handleSheetImport}
-                        className="px-5 py-3 bg-violet-500/20 border border-violet-500/30 text-violet-400 rounded-xl text-sm font-bold hover:bg-violet-500/30 transition-colors whitespace-nowrap">
+                        className="px-5 py-3 bg-sky-500/20 border border-sky-500/30 text-sky-400 rounded-xl text-sm font-bold hover:bg-sky-500/30 transition-colors whitespace-nowrap">
                         Import
                       </button>
                     </div>
-                    <div className="flex items-start gap-3 bg-amber-500/[0.06] border border-amber-500/15 rounded-xl p-4 text-xs text-amber-400/80">
+                    <div className="flex items-start gap-3 bg-red-500/[0.06] border border-red-500/15 rounded-xl p-4 text-xs text-red-400/80">
                       <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
                       Make sure your sheet is set to "Anyone with the link can view" in sharing settings.
                     </div>
@@ -438,7 +438,7 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
                 {/* Paste */}
                 {importTab === "paste" && (
                   <div className="space-y-4">
-                    <p className="text-sm text-zinc-500">Paste your data below. Format: <code className="text-violet-400 bg-violet-500/10 px-1.5 py-0.5 rounded-lg">Name, Email, Phone</code></p>
+                    <p className="text-sm text-zinc-500">Paste your data below. Format: <code className="text-sky-400 bg-sky-500/10 px-1.5 py-0.5 rounded-lg">Name, Email, Phone</code></p>
                     <textarea
                       value={pasteText}
                       onChange={(e) => setPasteText(e.target.value)}
@@ -447,7 +447,7 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
                       className={`${inputCls} resize-none font-mono leading-relaxed`}
                     />
                     <button onClick={handlePasteImport} disabled={!pasteText.trim()}
-                      className="px-6 py-2.5 bg-violet-500/15 border border-violet-500/25 text-violet-400 rounded-xl text-sm font-bold hover:bg-violet-500/25 transition-colors disabled:opacity-40">
+                      className="px-6 py-2.5 bg-sky-500/15 border border-sky-500/25 text-sky-400 rounded-xl text-sm font-bold hover:bg-sky-500/25 transition-colors disabled:opacity-40">
                       Import Contacts
                     </button>
                   </div>
@@ -462,7 +462,7 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
                       <input value={manualPhone} onChange={(e) => setManualPhone(e.target.value)} placeholder="Phone" className={inputCls} />
                     </div>
                     <button onClick={handleAddManual}
-                      className="flex items-center gap-2 px-5 py-2.5 bg-violet-500/15 border border-violet-500/25 text-violet-400 rounded-xl text-sm font-bold hover:bg-violet-500/25 transition-all">
+                      className="flex items-center gap-2 px-5 py-2.5 bg-sky-500/15 border border-sky-500/25 text-sky-400 rounded-xl text-sm font-bold hover:bg-sky-500/25 transition-all">
                       <UserPlus className="w-4 h-4" /> Add Contact
                     </button>
                   </div>
@@ -473,13 +473,13 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
                   <div>
                     <div className="flex items-center justify-between mb-3">
                       <p className="text-white font-bold text-sm">{contacts.length} contacts ready</p>
-                      <button onClick={() => setContacts([])} className="text-xs text-rose-400 hover:text-rose-300 transition-colors">Clear all</button>
+                      <button onClick={() => setContacts([])} className="text-xs text-red-400 hover:text-red-300 transition-colors">Clear all</button>
                     </div>
                     <div className="border border-white/[0.06] rounded-2xl overflow-hidden max-h-56 overflow-y-auto divide-y divide-white/[0.04]">
                       {contacts.map((c, i) => (
                         <div key={c.id} className={`flex items-center justify-between px-4 py-3 text-sm ${i % 2 === 0 ? "bg-white/[0.01]" : "bg-transparent"}`}>
                           <div className="flex items-center gap-3">
-                            <div className="w-7 h-7 rounded-full bg-violet-500/20 border border-violet-500/30 flex items-center justify-center text-violet-400 text-xs font-black">
+                            <div className="w-7 h-7 rounded-full bg-sky-500/20 border border-sky-500/30 flex items-center justify-center text-sky-400 text-xs font-black">
                               {c.name.charAt(0).toUpperCase()}
                             </div>
                             <div>
@@ -488,7 +488,7 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
                             </div>
                           </div>
                           <button onClick={() => setContacts((prev) => prev.filter((x) => x.id !== c.id))}
-                            className="text-zinc-700 hover:text-rose-400 transition-colors p-1">
+                            className="text-zinc-700 hover:text-red-400 transition-colors p-1">
                             <Trash2 className="w-3.5 h-3.5" />
                           </button>
                         </div>
@@ -503,8 +503,8 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
             {step === 3 && (
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-                    <MessageSquare className="w-5 h-5 text-emerald-400" />
+                  <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center">
+                    <MessageSquare className="w-5 h-5 text-sky-400" />
                   </div>
                   <div>
                     <h2 className="text-white font-black text-lg">Message Template</h2>
@@ -526,7 +526,7 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
                   <div className="flex gap-2 mt-2">
                     {["{name}", "{business}"].map((tag) => (
                       <button key={tag} onClick={() => setMessageTemplate((prev) => prev + ` ${tag}`)}
-                        className="text-[11px] text-violet-400 bg-violet-500/10 border border-violet-500/20 px-2.5 py-1 rounded-lg hover:bg-violet-500/20 transition-colors font-mono">
+                        className="text-[11px] text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2.5 py-1 rounded-lg hover:bg-sky-500/20 transition-colors font-mono">
                         {tag}
                       </button>
                     ))}
@@ -538,19 +538,19 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
                   <div className="bg-black/30 border border-white/[0.06] rounded-2xl p-6 space-y-4">
                     {/* Phone bubble */}
                     <div className="flex gap-3">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center text-white text-xs font-black flex-shrink-0">R</div>
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center text-white text-xs font-black flex-shrink-0">R</div>
                       <div className="bg-white/[0.06] border border-white/[0.08] rounded-2xl rounded-tl-sm p-4 text-sm text-zinc-300 max-w-sm leading-relaxed">
                         {resolvedTemplate}
                       </div>
                     </div>
                     <p className="text-xs text-zinc-600 pl-11">Customer replies with:</p>
                     <div className="flex gap-2 pl-11 max-w-xs">
-                      <div className="flex-1 bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 rounded-xl py-2.5 text-xs font-bold text-center">👍 Loved it!</div>
-                      <div className="flex-1 bg-rose-500/15 border border-rose-500/30 text-rose-400 rounded-xl py-2.5 text-xs font-bold text-center">👎 Had issues</div>
+                      <div className="flex-1 bg-sky-500/15 border border-sky-500/30 text-sky-400 rounded-xl py-2.5 text-xs font-bold text-center">👍 Loved it!</div>
+                      <div className="flex-1 bg-red-500/15 border border-red-500/30 text-red-400 rounded-xl py-2.5 text-xs font-bold text-center">👎 Had issues</div>
                     </div>
                     <div className="grid grid-cols-2 gap-2 pl-11 text-xs max-w-xs">
-                      <div className="bg-emerald-500/[0.07] border border-emerald-500/20 rounded-xl p-3 text-emerald-400 text-center">✅ → Google Maps review</div>
-                      <div className="bg-rose-500/[0.07] border border-rose-500/20 rounded-xl p-3 text-rose-400 text-center">📝 Private feedback</div>
+                      <div className="bg-sky-500/[0.07] border border-sky-500/20 rounded-xl p-3 text-sky-400 text-center">✅ → Google Maps review</div>
+                      <div className="bg-red-500/[0.07] border border-red-500/20 rounded-xl p-3 text-red-400 text-center">📝 Private feedback</div>
                     </div>
                   </div>
                 </div>
@@ -561,8 +561,8 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
             {step === 4 && (
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
-                    <Send className="w-5 h-5 text-amber-400" />
+                  <div className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                    <Send className="w-5 h-5 text-red-400" />
                   </div>
                   <div>
                     <h2 className="text-white font-black text-lg">Review & Launch</h2>
@@ -601,13 +601,13 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-zinc-500">Review routing</span>
-                        <span className="text-emerald-400 font-bold">Active ✓</span>
+                        <span className="text-sky-400 font-bold">Active ✓</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-violet-500/[0.07] border border-violet-500/15 rounded-2xl p-5 text-sm text-zinc-400 leading-relaxed">
+                <div className="bg-sky-500/[0.07] border border-sky-500/15 rounded-2xl p-5 text-sm text-zinc-400 leading-relaxed">
                   <span className="text-white font-bold">How it works: </span>
                   Each contact receives your personalized message. Happy customers are sent to Google Maps. Unhappy feedback is captured privately in your dashboard.
                 </div>
@@ -615,7 +615,7 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
                 <button
                   onClick={handleLaunch}
                   disabled={isLaunching}
-                  className="w-full py-4 rounded-2xl bg-gradient-to-r from-violet-500 to-indigo-600 text-white font-black text-base shadow-[0_0_40px_rgba(139,92,246,0.3)] hover:shadow-[0_0_60px_rgba(139,92,246,0.5)] hover:scale-[1.01] transition-all disabled:opacity-60 disabled:scale-100 flex items-center justify-center gap-3"
+                  className="w-full py-4 rounded-2xl bg-gradient-to-r from-sky-500 to-sky-600 text-white font-black text-base shadow-[0_0_40px_rgba(139,92,246,0.3)] hover:shadow-[0_0_60px_rgba(139,92,246,0.5)] hover:scale-[1.01] transition-all disabled:opacity-60 disabled:scale-100 flex items-center justify-center gap-3"
                 >
                   {isLaunching ? (
                     <><Loader2 className="w-5 h-5 animate-spin" /> Launching campaign...</>
@@ -640,7 +640,7 @@ export function NewCampaign({ onCampaignCreate, onViewCampaign }: NewCampaignPro
               <button
                 onClick={() => setStep((s) => s + 1)}
                 disabled={!canProceed()}
-                className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-violet-500 to-indigo-600 text-white text-sm font-black shadow-[0_0_20px_rgba(139,92,246,0.2)] hover:shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:scale-[1.02] transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:scale-100"
+                className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-sky-600 text-white text-sm font-black shadow-[0_0_20px_rgba(139,92,246,0.2)] hover:shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:scale-[1.02] transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:scale-100"
               >
                 Continue <ChevronRight className="w-4 h-4" />
               </button>

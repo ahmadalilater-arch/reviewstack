@@ -62,7 +62,7 @@ const Input = memo(
           className={cn(
             `flex h-12 w-full rounded-[10px] border-none bg-zinc-900/90 px-4 py-2 text-sm text-white
              transition duration-300 placeholder:text-zinc-600
-             focus-visible:ring-[2px] focus-visible:ring-violet-500/40 focus-visible:outline-none
+             focus-visible:ring-[2px] focus-visible:ring-sky-500/40 focus-visible:outline-none
              disabled:cursor-not-allowed disabled:opacity-50
              shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]
              hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)]`,
@@ -322,8 +322,8 @@ export const TechOrbitDisplay = memo(function TechOrbitDisplay({
 
 export const BottomGradient = () => (
   <>
-    <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
-    <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-400 to-transparent" />
+    <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
+    <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-sky-400 to-transparent" />
   </>
 );
 
@@ -489,7 +489,7 @@ export const AnimatedForm = memo(function AnimatedForm({
               >
                 <Label htmlFor={field.label}>
                   {field.label}
-                  {field.required && <span className="text-violet-500 ml-0.5">*</span>}
+                  {field.required && <span className="text-sky-500 ml-0.5">*</span>}
                 </Label>
               </BoxReveal>
 
@@ -530,9 +530,9 @@ export const AnimatedForm = memo(function AnimatedForm({
                   <motion.p
                     initial={{ opacity: 0, y: -4 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-rose-400 text-xs mt-1.5 flex items-center gap-1.5"
+                    className="text-red-400 text-xs mt-1.5 flex items-center gap-1.5"
                   >
-                    <span className="w-1 h-1 rounded-full bg-rose-400 flex-shrink-0" />
+                    <span className="w-1 h-1 rounded-full bg-red-400 flex-shrink-0" />
                     {errors[field.label]}
                   </motion.p>
                 )}
@@ -543,7 +543,7 @@ export const AnimatedForm = memo(function AnimatedForm({
 
         {/* Global error */}
         {errorField && (
-          <p className="text-rose-400 text-sm">{errorField}</p>
+          <p className="text-red-400 text-sm">{errorField}</p>
         )}
 
         {/* Forgot password link */}
@@ -552,7 +552,7 @@ export const AnimatedForm = memo(function AnimatedForm({
             <div className="text-right -mt-2">
               <button
                 type="button"
-                className="text-xs text-zinc-600 hover:text-violet-400 font-medium transition-colors"
+                className="text-xs text-zinc-600 hover:text-sky-400 font-medium transition-colors"
                 onClick={goTo}
               >
                 {textVariantButton}
@@ -567,7 +567,7 @@ export const AnimatedForm = memo(function AnimatedForm({
             type="submit"
             disabled={isLoading}
             className="group/btn relative w-full rounded-xl overflow-hidden
-              bg-gradient-to-br from-violet-600 via-violet-600 to-indigo-600
+              bg-gradient-to-br from-sky-600 via-sky-600 to-sky-600
               text-white h-12 font-bold text-sm
               hover:shadow-[0_0_50px_rgba(139,92,246,0.45)]
               hover:scale-[1.015] active:scale-[0.99]
@@ -611,7 +611,7 @@ export const AnimatedForm = memo(function AnimatedForm({
               <button
                 type="button"
                 onClick={onAltAction}
-                className="text-violet-400 hover:text-violet-300 text-sm font-bold transition-colors"
+                className="text-sky-400 hover:text-sky-300 text-sm font-bold transition-colors"
               >
                 {altActionButton}
               </button>

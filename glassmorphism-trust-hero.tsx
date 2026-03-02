@@ -25,11 +25,11 @@ export default function HeroStatsCard() {
     <div className="space-y-4 w-full max-w-sm">
       {/* Main stats card */}
       <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-xl shadow-2xl">
-        <div className="absolute top-0 right-0 -mr-12 -mt-12 h-48 w-48 rounded-full bg-violet-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 -mr-12 -mt-12 h-48 w-48 rounded-full bg-sky-500/10 blur-3xl pointer-events-none" />
         <div className="relative z-10">
           <div className="flex items-center gap-4 mb-6">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/15">
-              <TrendingUp className="h-5 w-5 text-violet-300" />
+              <TrendingUp className="h-5 w-5 text-sky-300" />
             </div>
             <div>
               <div className="text-3xl font-black tracking-tight text-white">2,400+</div>
@@ -43,7 +43,7 @@ export default function HeroStatsCard() {
               <span className="text-white font-semibold">+0.8★</span>
             </div>
             <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">
-              <div className="h-full w-[80%] rounded-full bg-gradient-to-r from-violet-400 to-indigo-400" />
+              <div className="h-full w-[80%] rounded-full bg-gradient-to-r from-sky-400 to-sky-400" />
             </div>
           </div>
 
@@ -65,17 +65,17 @@ export default function HeroStatsCard() {
           <div className="mt-5 flex gap-2">
             <div className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-medium text-zinc-300">
               <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-sky-400" />
               </span>
               LIVE
             </div>
             <div className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-medium text-zinc-300">
-              <Shield className="w-2.5 h-2.5 text-violet-400" />
+              <Shield className="w-2.5 h-2.5 text-sky-400" />
               GDPR SAFE
             </div>
             <div className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-medium text-zinc-300">
-              <Crown className="w-2.5 h-2.5 text-amber-400" />
+              <Crown className="w-2.5 h-2.5 text-red-400" />
               #1 RATED
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function HeroStatsCard() {
                   <span className="text-sm font-bold text-white tracking-tight whitespace-nowrap">
                     {client.name}
                   </span>
-                  <Star className="h-2.5 w-2.5 text-amber-400 fill-amber-400" />
+                  <Star className="h-2.5 w-2.5 text-red-400 fill-red-400" />
                 </div>
               );
             })}
