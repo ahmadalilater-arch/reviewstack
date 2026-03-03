@@ -117,7 +117,7 @@ export function PageLoader({ targetView, visible, onDone }: PageLoaderProps) {
         WebkitBackdropFilter: "blur(24px)",
       }}
     >
-      {/* Ambient violet orbs */}
+      {/* Ambient sky orbs */}
       <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}>
         <div style={{
           position: "absolute",
@@ -172,7 +172,7 @@ export function PageLoader({ targetView, visible, onDone }: PageLoaderProps) {
         <div style={{
           height: "100%",
           width: `${progress}%`,
-          background: "linear-gradient(90deg, #6d28d9, #7c3aed, #8b5cf6, #a78bfa)",
+          background: "linear-gradient(90deg, #6d28d9, #7c3aed, #0ea5e9, #a78bfa)",
           transition: "width 0.12s linear",
           boxShadow: "0 0 10px rgba(139,92,246,0.7)",
           borderRadius: "0 2px 2px 0",

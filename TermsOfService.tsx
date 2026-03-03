@@ -13,7 +13,7 @@ const Section = ({ icon: Icon, title, children }: { icon: any; title: string; ch
       <div className="flex items-center gap-3 mb-5">
         <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
           style={{ background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.2)" }}>
-          <Icon className="w-4 h-4 text-violet-400" />
+          <Icon className="w-4 h-4 text-sky-400" />
         </div>
         <h2 className="text-lg font-bold" style={{ color: "var(--text-primary)" }}>{title}</h2>
       </div>
@@ -104,7 +104,7 @@ export function TermsOfService({ setView }: Props) {
               "Manage, analyze, and respond to customer feedback from a central dashboard",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0 mt-2" />
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 flex-shrink-0 mt-2" />
                 {item}
               </li>
             ))}
@@ -163,7 +163,7 @@ export function TermsOfService({ setView }: Props) {
               "You will not use Repute to contact individuals on national Do Not Call registries without proper consent",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0 mt-2" />
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 flex-shrink-0 mt-2" />
                 {item}
               </li>
             ))}
@@ -220,7 +220,7 @@ export function TermsOfService({ setView }: Props) {
           <div className="mt-4 p-5 rounded-2xl"
             style={{ background: isDark ? "rgba(255,255,255,0.03)" : "rgba(0,0,0,0.04)", border: "1px solid var(--border-subtle)" }}>
             <p className="font-semibold mb-2" style={{ color: "var(--text-primary)" }}>Repute Legal Team</p>
-            <p>Email: <a href="mailto:legal@repute.app" className="text-violet-400 hover:underline">legal@repute.app</a></p>
+            <p>Email: <a href="mailto:legal@repute.app" className="text-sky-400 hover:underline">legal@repute.app</a></p>
             <p>Address: 123 Market Street, Suite 400, San Francisco, CA 94105</p>
             <p>Response time: Within 3 business days</p>
           </div>
@@ -233,7 +233,7 @@ export function TermsOfService({ setView }: Props) {
             © 2025 Repute, Inc. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <button onClick={() => setView("privacy")} className="text-violet-400 hover:underline">Privacy Policy</button>
+            <button onClick={() => setView("privacy")} className="text-sky-400 hover:underline">Privacy Policy</button>
             <button onClick={() => setView("landing")} style={{ color: "var(--text-muted)" }} className="hover:underline">Back to Home</button>
           </div>
         </div>

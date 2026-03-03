@@ -50,11 +50,11 @@ export const WavyBackground = memo(function WavyBackground({
     const getSpeed = () => (speed === "fast" ? 0.002 : 0.0008);
 
     const waveColors = colors ?? [
-      "rgba(253, 164, 175, 0.85)",  // rose-300   — soft pink
-      "rgba(251, 113, 133, 0.75)",  // rose-400   — warm pink
-      "rgba(249, 168, 212, 0.80)",  // pink-300   — light blush pink
-      "rgba(254, 205, 211, 0.65)",  // rose-200   — pale blush
-      "rgba(251, 191, 36,  0.55)",  // amber-400  — warm gold
+      "rgba(253, 164, 175, 0.85)",  // red-300   — soft pink
+      "rgba(251, 113, 133, 0.75)",  // red-400   — warm pink
+      "rgba(249, 168, 212, 0.80)",  // red-300   — light blush pink
+      "rgba(254, 205, 211, 0.65)",  // red-200   — pale blush
+      "rgba(251, 191, 36,  0.55)",  // red-400  — warm gold
     ];
 
     let w = (canvas.width = window.innerWidth);

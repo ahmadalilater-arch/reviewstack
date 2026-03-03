@@ -89,8 +89,8 @@ function OverviewTab({ onNavigate }: { onNavigate: (v: string) => void }) {
   const stats = [
     { label: 'Total Reviews Earned', value: counts.reviews.toLocaleString(), change: '+12%', up: true, icon: Star, color: '#f59e0b' },
     { label: 'Active Campaigns', value: '3', change: '+1', up: true, icon: TrendingUp, color: '#38bdf8' },
-    { label: 'Routing Rate', value: `${counts.rate}%`, change: '+2%', up: true, icon: ArrowUpRight, color: '#10b981' },
-    { label: 'Avg Rating Boost', value: `+${(counts.rating / 10).toFixed(1)}★`, change: '+0.2', up: true, icon: Shield, color: '#f43f5e' },
+    { label: 'Routing Rate', value: `${counts.rate}%`, change: '+2%', up: true, icon: ArrowUpRight, color: '#0ea5e9' },
+    { label: 'Avg Rating Boost', value: `+${(counts.rating / 10).toFixed(1)}★`, change: '+0.2', up: true, icon: Shield, color: '#ef4444' },
   ];
 
   return (
@@ -109,7 +109,7 @@ function OverviewTab({ onNavigate }: { onNavigate: (v: string) => void }) {
               <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: `${s.color}18` }}>
                 <s.icon className="w-4 h-4" style={{ color: s.color }} />
               </div>
-              <span className={`text-xs font-medium flex items-center gap-0.5 ${s.up ? 'text-emerald-500' : 'text-rose-500'}`}>
+              <span className={`text-xs font-medium flex items-center gap-0.5 ${s.up ? 'text-sky-500' : 'text-red-500'}`}>
                 {s.up ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}{s.change}
               </span>
             </div>
@@ -131,7 +131,7 @@ function OverviewTab({ onNavigate }: { onNavigate: (v: string) => void }) {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
                     <span className="text-sm font-medium truncate" style={{ color: 'var(--text-primary)' }}>{c.name}</span>
-                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${c.status === 'active' ? 'bg-emerald-500/10 text-emerald-400' : c.status === 'completed' ? 'bg-sky-500/10 text-sky-400' : 'bg-zinc-500/10 text-zinc-400'}`}>{c.status}</span>
+                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${c.status === 'active' ? 'bg-sky-500/10 text-sky-400' : c.status === 'completed' ? 'bg-sky-500/10 text-sky-400' : 'bg-zinc-500/10 text-zinc-400'}`}>{c.status}</span>
                   </div>
                   <div className="flex items-center gap-3 mt-1.5">
                     <div className="flex-1 h-1.5 rounded-full bg-zinc-700/50 overflow-hidden">
@@ -141,7 +141,7 @@ function OverviewTab({ onNavigate }: { onNavigate: (v: string) => void }) {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-sm font-bold text-emerald-400">+{c.positive}</div>
+                  <div className="text-sm font-bold text-sky-400">+{c.positive}</div>
                   <div className="text-xs" style={{ color: 'var(--text-tertiary)' }}>reviews</div>
                 </div>
               </div>
@@ -154,8 +154,8 @@ function OverviewTab({ onNavigate }: { onNavigate: (v: string) => void }) {
           <div className="space-y-2">
             {[
               { icon: Plus, label: 'New Campaign', color: '#38bdf8', action: 'new-campaign' },
-              { icon: MessageSquare, label: 'View Inbox', color: '#f43f5e', action: 'inbox' },
-              { icon: Users, label: 'Manage Contacts', color: '#10b981', action: 'contacts' },
+              { icon: MessageSquare, label: 'View Inbox', color: '#ef4444', action: 'inbox' },
+              { icon: Users, label: 'Manage Contacts', color: '#0ea5e9', action: 'contacts' },
               { icon: BarChart2, label: 'Analytics', color: '#f59e0b', action: 'analytics' },
             ].map((a, i) => (
               <button key={i} onClick={() => onNavigate(a.action)} className="w-full flex items-center gap-3 p-2.5 rounded-lg transition-all hover:scale-[1.01] text-left" style={{ background: 'var(--bg-surface-2)' }}>
@@ -207,7 +207,7 @@ function CampaignsTab({ onNavigate }: { onNavigate: (v: string) => void }) {
               <div>
                 <div className="flex items-center gap-2">
                   <h3 className="font-semibold text-sm" style={{ color: 'var(--text-primary)' }}>{c.name}</h3>
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${c.status === 'active' ? 'bg-emerald-500/10 text-emerald-400' : c.status === 'completed' ? 'bg-sky-500/10 text-sky-400' : 'bg-zinc-500/10 text-zinc-400'}`}>{c.status}</span>
+                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${c.status === 'active' ? 'bg-sky-500/10 text-sky-400' : c.status === 'completed' ? 'bg-sky-500/10 text-sky-400' : 'bg-zinc-500/10 text-zinc-400'}`}>{c.status}</span>
                 </div>
                 <p className="text-xs mt-0.5" style={{ color: 'var(--text-tertiary)' }}>Created {c.date}</p>
               </div>
@@ -218,8 +218,8 @@ function CampaignsTab({ onNavigate }: { onNavigate: (v: string) => void }) {
             <div className="grid grid-cols-4 gap-3 mb-3">
               {[
                 { label: 'Contacts', value: c.contacts, color: 'var(--text-primary)' },
-                { label: 'Reviews', value: c.positive, color: '#10b981' },
-                { label: 'Intercepted', value: c.negative, color: '#f43f5e' },
+                { label: 'Reviews', value: c.positive, color: '#0ea5e9' },
+                { label: 'Intercepted', value: c.negative, color: '#ef4444' },
                 { label: 'Happy %', value: `${c.happy}%`, color: '#38bdf8' },
               ].map((s, i) => (
                 <div key={i} className="rounded-lg p-2.5 text-center" style={{ background: 'var(--bg-surface-2)' }}>
@@ -230,7 +230,7 @@ function CampaignsTab({ onNavigate }: { onNavigate: (v: string) => void }) {
             </div>
             <div className="flex items-center gap-2">
               <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: 'var(--bg-surface-2)' }}>
-                <div className="h-full rounded-full bg-gradient-to-r from-sky-500 to-emerald-500" style={{ width: `${c.happy}%` }} />
+                <div className="h-full rounded-full bg-gradient-to-r from-sky-500 to-sky-500" style={{ width: `${c.happy}%` }} />
               </div>
               <span className="text-xs font-medium" style={{ color: 'var(--text-tertiary)' }}>{c.happy}% positive</span>
             </div>
@@ -256,8 +256,8 @@ function InboxTab() {
   return (
     <div className="space-y-4 animate-[tab-enter_0.3s_ease_forwards]">
       <div className="rounded-xl border p-4 flex items-center gap-4" style={{ background: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
-        <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-rose-500/10">
-          <Shield className="w-5 h-5 text-rose-400" />
+        <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-red-500/10">
+          <Shield className="w-5 h-5 text-red-400" />
         </div>
         <div>
           <h3 className="font-semibold text-sm" style={{ color: 'var(--text-primary)' }}>Private Feedback Intercepted</h3>
@@ -266,20 +266,20 @@ function InboxTab() {
       </div>
       <div className="space-y-3">
         {items.map(item => (
-          <div key={item.id} className={`rounded-xl border p-4 transition-all ${item.resolved ? 'opacity-50' : 'hover:border-rose-500/30'}`} style={{ background: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
+          <div key={item.id} className={`rounded-xl border p-4 transition-all ${item.resolved ? 'opacity-50' : 'hover:border-red-500/30'}`} style={{ background: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
             <div className="flex items-start justify-between mb-2">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-white text-xs font-bold">{item.name[0]}</div>
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center text-white text-xs font-bold">{item.name[0]}</div>
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>{item.name}</span>
-                    {!item.resolved && <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-rose-500/10 text-rose-400 font-medium">New</span>}
-                    {item.resolved && <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-medium">Resolved</span>}
+                    {!item.resolved && <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-red-500/10 text-red-400 font-medium">New</span>}
+                    {item.resolved && <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-sky-500/10 text-sky-400 font-medium">Resolved</span>}
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-xs" style={{ color: 'var(--text-tertiary)' }}>{item.campaign}</span>
                     <span className="text-xs" style={{ color: 'var(--text-tertiary)' }}>• {item.date}</span>
-                    <div className="flex">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className={`w-2.5 h-2.5 ${i < item.rating ? 'text-amber-400 fill-amber-400' : 'text-zinc-600'}`} />)}</div>
+                    <div className="flex">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className={`w-2.5 h-2.5 ${i < item.rating ? 'text-red-400 fill-red-400' : 'text-zinc-600'}`} />)}</div>
                   </div>
                 </div>
               </div>
@@ -305,7 +305,7 @@ function InboxTab() {
               <h3 className="font-bold" style={{ color: 'var(--text-primary)' }}>Reply to {replyTo.name}</h3>
               <button onClick={() => setReplyTo(null)} className="p-1.5 rounded-lg transition-colors" style={{ background: 'var(--bg-surface-2)' }}><X className="w-4 h-4" style={{ color: 'var(--text-tertiary)' }} /></button>
             </div>
-            <div className="rounded-lg p-3 mb-4 text-sm border-l-2 border-rose-500" style={{ background: 'var(--bg-surface-2)', color: 'var(--text-secondary)' }}>{replyTo.message}</div>
+            <div className="rounded-lg p-3 mb-4 text-sm border-l-2 border-red-500" style={{ background: 'var(--bg-surface-2)', color: 'var(--text-secondary)' }}>{replyTo.message}</div>
             <textarea value={replyText} onChange={e => setReplyText(e.target.value)} rows={4} placeholder="Write a private response..." className="w-full px-3 py-2 rounded-lg text-sm border focus:outline-none resize-none transition-all mb-4" style={{ background: 'var(--bg-surface-2)', borderColor: 'var(--border-subtle)', color: 'var(--text-primary)' }} />
             <button onClick={handleReply} disabled={replySent} className="w-full py-2.5 rounded-xl font-semibold text-sm text-white transition-all bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500 disabled:opacity-60">
               {replySent ? '✓ Sent!' : 'Send Private Reply'}
@@ -351,7 +351,7 @@ function ContactsTab() {
             <div className="col-span-3 flex items-center text-xs truncate" style={{ color: 'var(--text-secondary)' }}>{c.email}</div>
             <div className="col-span-2 flex items-center text-xs truncate" style={{ color: 'var(--text-tertiary)' }}>{c.campaign}</div>
             <div className="col-span-2 flex items-center">
-              <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${c.status === 'positive' ? 'bg-emerald-500/10 text-emerald-400' : c.status === 'negative' ? 'bg-rose-500/10 text-rose-400' : 'bg-amber-500/10 text-amber-400'}`}>{c.status}</span>
+              <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${c.status === 'positive' ? 'bg-sky-500/10 text-sky-400' : c.status === 'negative' ? 'bg-red-500/10 text-red-400' : 'bg-red-500/10 text-red-400'}`}>{c.status}</span>
             </div>
             <div className="col-span-2 flex items-center gap-1.5">
               {c.status === 'negative' && <button className="p-1 rounded hover:bg-sky-500/10 transition-colors"><Mail className="w-3.5 h-3.5 text-sky-400" /></button>}
@@ -387,9 +387,9 @@ function TemplatesTab() {
               <div>
                 <span className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>{t.name}</span>
                 <div className="flex items-center gap-2 mt-1">
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${t.channel === 'email' ? 'bg-sky-500/10 text-sky-400' : 'bg-emerald-500/10 text-emerald-400'}`}>{t.channel}</span>
+                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${t.channel === 'email' ? 'bg-sky-500/10 text-sky-400' : 'bg-sky-500/10 text-sky-400'}`}>{t.channel}</span>
                   <span className="text-[10px]" style={{ color: 'var(--text-tertiary)' }}>{t.usage} sent</span>
-                  <span className="text-[10px] text-emerald-400">{t.positive}% positive</span>
+                  <span className="text-[10px] text-sky-400">{t.positive}% positive</span>
                 </div>
               </div>
               <div className="flex gap-1">
@@ -458,9 +458,9 @@ function AnalyticsTab() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {[
           { label: 'Avg Open Rate', value: '68%', icon: Mail, color: '#38bdf8' },
-          { label: 'Click-Through', value: '43%', icon: ArrowUpRight, color: '#10b981' },
+          { label: 'Click-Through', value: '43%', icon: ArrowUpRight, color: '#0ea5e9' },
           { label: 'Conversion', value: '31%', icon: TrendingUp, color: '#f59e0b' },
-          { label: 'Unsubscribes', value: '0.4%', icon: ArrowDownRight, color: '#f43f5e' },
+          { label: 'Unsubscribes', value: '0.4%', icon: ArrowDownRight, color: '#ef4444' },
         ].map((s, i) => (
           <div key={i} className="rounded-xl border p-4" style={{ background: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
             <div className="flex items-center gap-2 mb-2">
@@ -496,7 +496,7 @@ function AnalyticsTab() {
         <div className="rounded-xl border p-5" style={{ background: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
           <h3 className="font-semibold text-sm mb-4" style={{ color: 'var(--text-primary)' }}>By Channel</h3>
           <div className="space-y-3">
-            {[{ label: 'Email', pct: 68, color: '#38bdf8' }, { label: 'SMS', pct: 24, color: '#10b981' }, { label: 'WhatsApp', pct: 8, color: '#f59e0b' }].map((c, i) => (
+            {[{ label: 'Email', pct: 68, color: '#38bdf8' }, { label: 'SMS', pct: 24, color: '#0ea5e9' }, { label: 'WhatsApp', pct: 8, color: '#f59e0b' }].map((c, i) => (
               <div key={i} className="space-y-1">
                 <div className="flex justify-between text-xs"><span style={{ color: 'var(--text-secondary)' }}>{c.label}</span><span style={{ color: 'var(--text-tertiary)' }}>{c.pct}%</span></div>
                 <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'var(--bg-surface-2)' }}>
@@ -512,7 +512,7 @@ function AnalyticsTab() {
             {[
               { label: 'Messages Sent', value: 493, pct: 100, color: '#38bdf8' },
               { label: 'Opened', value: 335, pct: 68, color: '#38bdf8' },
-              { label: 'Responded', value: 212, pct: 43, color: '#10b981' },
+              { label: 'Responded', value: 212, pct: 43, color: '#0ea5e9' },
               { label: 'Reviews Left', value: 153, pct: 31, color: '#f59e0b' },
             ].map((s, i) => (
               <div key={i} className="flex items-center gap-3">
@@ -533,12 +533,12 @@ function IntegrationsTab() {
   const [connected, setConnected] = useState<Record<string, boolean>>({ google: true, gmail: true, twilio: false, stripe: false, zapier: false, hubspot: false, sheets: true, webhooks: false });
   const integrations = [
     { id: 'google', name: 'Google Business', desc: 'Sync reviews to your Google profile', icon: Globe, color: '#38bdf8' },
-    { id: 'gmail', name: 'Gmail', desc: 'Send review requests via Gmail', icon: Mail, color: '#f43f5e' },
-    { id: 'sheets', name: 'Google Sheets', desc: 'Import contacts from spreadsheets', icon: FileText, color: '#10b981' },
+    { id: 'gmail', name: 'Gmail', desc: 'Send review requests via Gmail', icon: Mail, color: '#ef4444' },
+    { id: 'sheets', name: 'Google Sheets', desc: 'Import contacts from spreadsheets', icon: FileText, color: '#0ea5e9' },
     { id: 'twilio', name: 'Twilio SMS', desc: 'Send review requests via SMS', icon: Phone, color: '#f59e0b' },
     { id: 'stripe', name: 'Stripe', desc: 'Trigger reviews after payments', icon: CreditCard, color: '#38bdf8' },
     { id: 'zapier', name: 'Zapier', desc: 'Connect 5,000+ apps', icon: Zap, color: '#f97316' },
-    { id: 'hubspot', name: 'HubSpot', desc: 'Sync CRM contacts automatically', icon: Users, color: '#f43f5e' },
+    { id: 'hubspot', name: 'HubSpot', desc: 'Sync CRM contacts automatically', icon: Users, color: '#ef4444' },
     { id: 'webhooks', name: 'Webhooks', desc: 'Custom HTTP webhooks for any app', icon: Globe, color: '#a3a3a3' },
   ];
   return (
@@ -552,7 +552,7 @@ function IntegrationsTab() {
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
                 <span className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>{int.name}</span>
-                {connected[int.id] && <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-medium">Connected</span>}
+                {connected[int.id] && <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-sky-500/10 text-sky-400 font-medium">Connected</span>}
               </div>
               <p className="text-xs mt-0.5 truncate" style={{ color: 'var(--text-tertiary)' }}>{int.desc}</p>
             </div>
@@ -580,7 +580,7 @@ function BillingTab() {
         <button onClick={() => setAnnual(a => !a)} className={`relative w-10 h-5 rounded-full transition-all ${annual ? 'bg-sky-500' : ''}`} style={!annual ? { background: 'var(--border-subtle)' } : {}}>
           <span className={`absolute top-0.5 w-4 h-4 bg-white rounded-full shadow transition-all ${annual ? 'left-5' : 'left-0.5'}`} />
         </button>
-        <span className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>Annual <span className="text-emerald-400 text-xs font-bold">Save 20%</span></span>
+        <span className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>Annual <span className="text-sky-400 text-xs font-bold">Save 20%</span></span>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {plans.map((p, i) => (
@@ -611,7 +611,7 @@ function BillingTab() {
         <div className="space-y-3">
           {[
             { label: 'Contacts Messaged', used: 248, total: 1000, color: '#38bdf8' },
-            { label: 'Campaigns Active', used: 3, total: 10, color: '#10b981' },
+            { label: 'Campaigns Active', used: 3, total: 10, color: '#0ea5e9' },
             { label: 'Reviews Earned', used: 187, total: null, color: '#f59e0b' },
           ].map((u, i) => (
             <div key={i} className="space-y-1.5">
@@ -734,10 +734,10 @@ function SettingsTab({ toggleTheme, isDark }: { toggleTheme: () => void; isDark:
             <button onClick={handleSave} className="px-6 py-2.5 rounded-xl font-semibold text-sm text-white transition-all bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500">
               {saved ? '✓ Updated!' : 'Update Password'}
             </button>
-            <div className="p-4 rounded-xl border border-rose-500/20" style={{ background: 'rgba(244,63,94,0.05)' }}>
-              <p className="text-sm font-medium text-rose-400 mb-1">Danger Zone</p>
+            <div className="p-4 rounded-xl border border-red-500/20" style={{ background: 'rgba(244,63,94,0.05)' }}>
+              <p className="text-sm font-medium text-red-400 mb-1">Danger Zone</p>
               <p className="text-xs mb-3" style={{ color: 'var(--text-tertiary)' }}>Permanently delete your account and all data</p>
-              <button className="px-4 py-2 rounded-lg text-sm font-medium border border-rose-500/40 text-rose-400 hover:bg-rose-500/10 transition-colors">Delete Account</button>
+              <button className="px-4 py-2 rounded-lg text-sm font-medium border border-red-500/40 text-red-400 hover:bg-red-500/10 transition-colors">Delete Account</button>
             </div>
           </div>
         )}
@@ -761,7 +761,7 @@ function SettingsTab({ toggleTheme, isDark }: { toggleTheme: () => void; isDark:
             <div className="p-4 rounded-xl border" style={{ background: 'var(--bg-surface-2)', borderColor: 'var(--border-subtle)' }}>
               <p className="text-sm font-medium mb-3" style={{ color: 'var(--text-primary)' }}>Accent Color</p>
               <div className="flex gap-2">
-                {['#38bdf8', '#0ea5e9', '#f43f5e', '#10b981', '#f59e0b', '#6366f1'].map(color => (
+                {['#38bdf8', '#0ea5e9', '#ef4444', '#0ea5e9', '#f59e0b', '#0284c7'].map(color => (
                   <button key={color} className="w-7 h-7 rounded-full border-2 border-transparent hover:border-white/40 transition-all" style={{ background: color }} />
                 ))}
               </div>
@@ -815,7 +815,7 @@ export default function Dashboard({ onNavigate, setView, userEmail, userName }: 
             <button key={item.id} onClick={() => handleNav(item.id)} className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all text-left ${activeTab === item.id ? 'bg-sky-500/10 text-sky-400 border border-sky-500/20' : 'border border-transparent hover:border-sky-500/10 hover:bg-sky-500/5'}`} style={activeTab !== item.id ? { color: 'var(--text-secondary)' } : {}}>
               <item.icon className="w-4 h-4 flex-shrink-0" />
               <span className="flex-1">{item.label}</span>
-              {item.badge ? <span className="w-4 h-4 rounded-full bg-rose-500 text-white text-[10px] font-bold flex items-center justify-center">{item.badge}</span> : null}
+              {item.badge ? <span className="w-4 h-4 rounded-full bg-red-500 text-white text-[10px] font-bold flex items-center justify-center">{item.badge}</span> : null}
             </button>
           ))}
         </nav>
@@ -852,7 +852,7 @@ export default function Dashboard({ onNavigate, setView, userEmail, userName }: 
             <div className="relative">
               <button onClick={() => setNotifOpen(v => !v)} className="w-9 h-9 rounded-xl flex items-center justify-center border relative transition-colors hover:border-sky-500/40" style={{ background: 'var(--bg-surface-2)', borderColor: 'var(--border-subtle)' }}>
                 <Bell className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
-                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500" />
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500" />
               </button>
               {notifOpen && (
                 <div className="absolute right-0 top-11 w-80 rounded-2xl border shadow-2xl z-50 overflow-hidden animate-[modal-enter_0.2s_ease_forwards]" style={{ background: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
@@ -862,8 +862,8 @@ export default function Dashboard({ onNavigate, setView, userEmail, userName }: 
                   </div>
                   {[
                     { icon: Star, color: '#38bdf8', title: 'New review earned', time: '2m ago', desc: 'Maria Garcia left a 5★ review on Google' },
-                    { icon: AlertCircle, color: '#f43f5e', title: 'Negative feedback', time: '1h ago', desc: 'James Wilson sent private feedback' },
-                    { icon: CheckCircle, color: '#10b981', title: 'Campaign completed', time: '3h ago', desc: 'Spa Experience Follow-up finished' },
+                    { icon: AlertCircle, color: '#ef4444', title: 'Negative feedback', time: '1h ago', desc: 'James Wilson sent private feedback' },
+                    { icon: CheckCircle, color: '#0ea5e9', title: 'Campaign completed', time: '3h ago', desc: 'Spa Experience Follow-up finished' },
                   ].map((n, i) => (
                     <div key={i} className="flex items-start gap-3 px-4 py-3 border-b transition-colors hover:bg-sky-500/5 cursor-pointer" style={{ borderColor: 'var(--border-subtle)' }}>
                       <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${n.color}18` }}><n.icon className="w-4 h-4" style={{ color: n.color }} /></div>
@@ -897,7 +897,7 @@ export default function Dashboard({ onNavigate, setView, userEmail, userName }: 
                     { label: 'Help Center', icon: HelpCircle, action: () => {} },
                     { label: 'Sign Out', icon: LogOut, action: () => nav('landing'), danger: true },
                   ].map((item, i) => (
-                    <button key={i} onClick={item.action} className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors text-left ${item.danger ? 'text-rose-400 hover:bg-rose-500/10' : 'hover:bg-sky-500/5'}`} style={!item.danger ? { color: 'var(--text-secondary)' } : {}}>
+                    <button key={i} onClick={item.action} className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors text-left ${item.danger ? 'text-red-400 hover:bg-red-500/10' : 'hover:bg-sky-500/5'}`} style={!item.danger ? { color: 'var(--text-secondary)' } : {}}>
                       <item.icon className="w-4 h-4" />{item.label}
                     </button>
                   ))}

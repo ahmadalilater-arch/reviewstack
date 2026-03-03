@@ -24,16 +24,16 @@ interface AuthPageProps {
 const orbitIcons: IconConfig[] = [
   {
     component: () => (
-      <div className="w-10 h-10 rounded-2xl bg-amber-500/15 border border-amber-500/25 flex items-center justify-center">
-        <Star className="w-5 h-5 text-amber-400 fill-amber-400/80" />
+      <div className="w-10 h-10 rounded-2xl bg-red-500/15 border border-red-500/25 flex items-center justify-center">
+        <Star className="w-5 h-5 text-red-400 fill-red-400/80" />
       </div>
     ),
     className: "size-10 border-none bg-transparent", duration: 32, delay: 0, radius: 120, path: true, reverse: false,
   },
   {
     component: () => (
-      <div className="w-10 h-10 rounded-2xl bg-emerald-500/15 border border-emerald-500/25 flex items-center justify-center">
-        <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+      <div className="w-10 h-10 rounded-2xl bg-sky-500/15 border border-sky-500/25 flex items-center justify-center">
+        <CheckCircle2 className="w-5 h-5 text-sky-400" />
       </div>
     ),
     className: "size-10 border-none bg-transparent", duration: 32, delay: 16, radius: 120, path: false, reverse: false,
@@ -226,12 +226,12 @@ export function AuthPage({ mode, setView, onAuth }: AuthPageProps) {
                 <p className="text-zinc-600 text-[0.72rem] text-center max-w-[170px] leading-relaxed tracking-wide uppercase font-semibold">
                   Automated reputation<br />management
                 </p>
-                <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/[0.08]">
+                <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-sky-500/20 bg-sky-500/[0.08]">
                   <span className="relative flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-sky-400" />
                   </span>
-                  <span className="text-[10px] font-bold text-emerald-400 tracking-widest uppercase">
+                  <span className="text-[10px] font-bold text-sky-400 tracking-widest uppercase">
                     Live · 2,400+ businesses
                   </span>
                 </div>
@@ -328,11 +328,11 @@ export function AuthPage({ mode, setView, onAuth }: AuthPageProps) {
             </div>
           )}
           {Object.keys(validationErrors).length > 0 && (
-            <div className="max-w-md w-full mb-4 flex items-start gap-3 px-4 py-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
-              <div className="w-4 h-4 rounded-full bg-amber-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <div className="max-w-md w-full mb-4 flex items-start gap-3 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/20">
+              <div className="w-4 h-4 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <span className="text-white text-[9px] font-black">!</span>
               </div>
-              <div className="text-amber-400 text-xs leading-relaxed">
+              <div className="text-red-400 text-xs leading-relaxed">
                 {Object.values(validationErrors).map((err, i) => <p key={i}>{err}</p>)}
               </div>
             </div>
@@ -430,7 +430,7 @@ export function AuthPage({ mode, setView, onAuth }: AuthPageProps) {
               <div className="flex flex-wrap gap-x-5 gap-y-2.5 mb-6">
                 {TRUST_BADGES.map((t) => (
                   <span key={t} className="flex items-center gap-1.5 text-xs text-zinc-600">
-                    <CheckCircle2 className="w-3 h-3 text-emerald-500 flex-shrink-0" />{t}
+                    <CheckCircle2 className="w-3 h-3 text-sky-500 flex-shrink-0" />{t}
                   </span>
                 ))}
               </div>
@@ -445,7 +445,7 @@ export function AuthPage({ mode, setView, onAuth }: AuthPageProps) {
                 </div>
                 <div>
                   <div className="flex gap-0.5 mb-1">
-                    {[1,2,3,4,5].map((s) => <Star key={s} className="w-2.5 h-2.5 text-amber-400 fill-amber-400" />)}
+                    {[1,2,3,4,5].map((s) => <Star key={s} className="w-2.5 h-2.5 text-red-400 fill-red-400" />)}
                   </div>
                   <p className="text-zinc-600 text-[11px]">Loved by 2,400+ businesses worldwide</p>
                 </div>
@@ -493,9 +493,9 @@ export function AuthPage({ mode, setView, onAuth }: AuthPageProps) {
                 Get monthly tips on reputation management, Google review strategies, and Repute product updates. No spam, ever.
               </p>
               {newsletterSuccess ? (
-                <div className="flex items-center gap-2 py-2.5 px-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  <p className="text-xs font-semibold text-emerald-400">You're subscribed! We'll be in touch.</p>
+                <div className="flex items-center gap-2 py-2.5 px-4 rounded-xl bg-sky-500/10 border border-sky-500/20">
+                  <CheckCircle2 className="w-4 h-4 text-sky-400" />
+                  <p className="text-xs font-semibold text-sky-400">You're subscribed! We'll be in touch.</p>
                 </div>
               ) : (
                 <form onSubmit={handleNewsletterSubmit} className="flex gap-2">

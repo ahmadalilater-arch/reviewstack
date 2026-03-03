@@ -12,7 +12,7 @@ const Section = ({ icon: Icon, title, children }: { icon: any; title: string; ch
     <div className="flex items-center gap-3 mb-5">
       <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
         style={{ background: "rgba(99,102,241,0.12)", border: "1px solid rgba(99,102,241,0.2)" }}>
-        <Icon className="w-4 h-4 text-indigo-400" />
+        <Icon className="w-4 h-4 text-sky-400" />
       </div>
       <h2 className="text-lg font-bold" style={{ color: "var(--text-primary)" }}>{title}</h2>
     </div>
@@ -78,9 +78,9 @@ export function PrivacyPolicy({ setView }: Props) {
         {/* Quick summary cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14">
           {[
-            { icon: Lock, title: "We don't sell data", desc: "We never sell your personal data or your customers' data to third parties.", color: "emerald" },
-            { icon: Eye, title: "Full transparency", desc: "We clearly explain exactly what data we collect and why we need it.", color: "indigo" },
-            { icon: UserCheck, title: "You're in control", desc: "Access, correct, or delete your data at any time from your settings.", color: "violet" },
+            { icon: Lock, title: "We don't sell data", desc: "We never sell your personal data or your customers' data to third parties.", color: "sky" },
+            { icon: Eye, title: "Full transparency", desc: "We clearly explain exactly what data we collect and why we need it.", color: "sky" },
+            { icon: UserCheck, title: "You're in control", desc: "Access, correct, or delete your data at any time from your settings.", color: "sky" },
           ].map(({ icon: Icon, title, desc, color }) => (
             <div key={title} className="p-5 rounded-2xl"
               style={{
@@ -88,7 +88,7 @@ export function PrivacyPolicy({ setView }: Props) {
                 border: "1px solid var(--border-subtle)"
               }}>
               <div className="w-8 h-8 rounded-xl flex items-center justify-center mb-3"
-                style={{ background: `rgba(${color === "emerald" ? "16,185,129" : color === "indigo" ? "99,102,241" : "139,92,246"},0.12)` }}>
+                style={{ background: `rgba(${color === "sky" ? "16,185,129" : color === "sky" ? "99,102,241" : "139,92,246"},0.12)` }}>
                 <Icon className={`w-4 h-4 text-${color}-400`} />
               </div>
               <p className="font-bold text-sm mb-1" style={{ color: "var(--text-primary)" }}>{title}</p>
@@ -144,7 +144,7 @@ export function PrivacyPolicy({ setView }: Props) {
               "Comply with legal obligations",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 flex-shrink-0 mt-2" />
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 flex-shrink-0 mt-2" />
                 {item}
               </li>
             ))}
@@ -184,7 +184,7 @@ export function PrivacyPolicy({ setView }: Props) {
               "Prevent fraudulent activity and ensure security (security cookies)",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 flex-shrink-0 mt-2" />
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 flex-shrink-0 mt-2" />
                 {item}
               </li>
             ))}
@@ -211,14 +211,14 @@ export function PrivacyPolicy({ setView }: Props) {
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2.5 p-2.5 rounded-lg"
                 style={{ background: isDark ? "rgba(16,185,129,0.06)" : "rgba(16,185,129,0.06)", border: "1px solid rgba(16,185,129,0.12)" }}>
-                <Shield className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                <Shield className="w-3 h-3 text-sky-400 flex-shrink-0" />
                 <span className="text-xs font-medium" style={{ color: "var(--text-primary)" }}>{item}</span>
               </div>
             ))}
           </div>
           <p className="mt-4">
             Despite our best efforts, no method of transmission or storage is 100% secure. If you believe your account
-            has been compromised, contact us immediately at <a href="mailto:security@repute.app" className="text-indigo-400 hover:underline">security@repute.app</a>.
+            has been compromised, contact us immediately at <a href="mailto:security@repute.app" className="text-sky-400 hover:underline">security@repute.app</a>.
           </p>
         </Section>
 
@@ -241,7 +241,7 @@ export function PrivacyPolicy({ setView }: Props) {
             ))}
           </div>
           <p className="mt-4">
-            To exercise any of these rights, email us at <a href="mailto:privacy@repute.app" className="text-indigo-400 hover:underline">privacy@repute.app</a>.
+            To exercise any of these rights, email us at <a href="mailto:privacy@repute.app" className="text-sky-400 hover:underline">privacy@repute.app</a>.
             We will respond within 30 days. GDPR users have additional rights under EU law.
           </p>
         </Section>
@@ -276,8 +276,8 @@ export function PrivacyPolicy({ setView }: Props) {
             style={{ background: isDark ? "rgba(255,255,255,0.03)" : "rgba(0,0,0,0.04)", border: "1px solid var(--border-subtle)" }}>
             <p className="font-semibold mb-3" style={{ color: "var(--text-primary)" }}>Repute Privacy Team</p>
             <div className="space-y-1.5 text-sm">
-              <p>Email: <a href="mailto:privacy@repute.app" className="text-indigo-400 hover:underline">privacy@repute.app</a></p>
-              <p>DPA requests: <a href="mailto:dpa@repute.app" className="text-indigo-400 hover:underline">dpa@repute.app</a></p>
+              <p>Email: <a href="mailto:privacy@repute.app" className="text-sky-400 hover:underline">privacy@repute.app</a></p>
+              <p>DPA requests: <a href="mailto:dpa@repute.app" className="text-sky-400 hover:underline">dpa@repute.app</a></p>
               <p>Address: 123 Market Street, Suite 400, San Francisco, CA 94105</p>
               <p>EU Representative: Repute EU Ltd., Dublin, Ireland</p>
               <p>Response time: Within 5 business days (30 days for formal requests)</p>
@@ -292,7 +292,7 @@ export function PrivacyPolicy({ setView }: Props) {
             © 2025 Repute, Inc. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <button onClick={() => setView("terms")} className="text-indigo-400 hover:underline">Terms of Service</button>
+            <button onClick={() => setView("terms")} className="text-sky-400 hover:underline">Terms of Service</button>
             <button onClick={() => setView("landing")} style={{ color: "var(--text-muted)" }} className="hover:underline">Back to Home</button>
           </div>
         </div>

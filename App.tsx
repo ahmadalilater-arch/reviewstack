@@ -17,7 +17,7 @@ import { ThemeProvider, useTheme } from "./context/ThemeContext";
 function DarkGlobalBg() {
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", background: "#0E0F14" }}>
-      {/* Top-center — rose/pink bloom matching hero waves */}
+      {/* Top-center — sky/red bloom matching hero waves */}
       <div style={{
         position: "absolute",
         top: "-20%", left: "20%",

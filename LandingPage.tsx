@@ -33,7 +33,7 @@ function NewsletterBlock({ setView }: { setView: (v: AppView) => void }) {
     >
       <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
         <div className="flex-1">
-          <p className="font-bold text-xs uppercase tracking-widest mb-2 text-violet-400">Newsletter</p>
+          <p className="font-bold text-xs uppercase tracking-widest mb-2 text-sky-400">Newsletter</p>
           <h3 className="text-xl font-black mb-2" style={{ color: "var(--text-primary)" }}>
             Stay ahead of the curve
           </h3>
@@ -43,9 +43,9 @@ function NewsletterBlock({ setView }: { setView: (v: AppView) => void }) {
         </div>
         <div className="flex-1 w-full">
           {submitted ? (
-            <div className="flex items-center gap-3 p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
-              <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-              <p className="text-sm font-semibold text-emerald-400">You're subscribed! Welcome to the community.</p>
+            <div className="flex items-center gap-3 p-4 rounded-2xl bg-sky-500/10 border border-sky-500/20">
+              <CheckCircle2 className="w-5 h-5 text-sky-400 flex-shrink-0" />
+              <p className="text-sm font-semibold text-sky-400">You're subscribed! Welcome to the community.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-3">
@@ -65,7 +65,7 @@ function NewsletterBlock({ setView }: { setView: (v: AppView) => void }) {
                 <button
                   type="submit"
                   className="px-5 py-3 rounded-xl font-bold text-sm text-white transition-all hover:opacity-90 flex-shrink-0"
-                  style={{ background: "linear-gradient(to right, #8b5cf6, #6366f1)" }}
+                  style={{ background: "linear-gradient(to right, #0ea5e9, #0284c7)" }}
                 >
                   Subscribe
                 </button>
@@ -74,7 +74,7 @@ function NewsletterBlock({ setView }: { setView: (v: AppView) => void }) {
                 <button
                   type="button"
                   onClick={() => setAgreed(!agreed)}
-                  className={`mt-0.5 w-4 h-4 rounded border transition-all flex-shrink-0 relative ${agreed ? "bg-violet-500 border-violet-500" : "border-zinc-600"}`}
+                  className={`mt-0.5 w-4 h-4 rounded border transition-all flex-shrink-0 relative ${agreed ? "bg-sky-500 border-sky-500" : "border-zinc-600"}`}
                 >
                   {agreed && (
                     <svg className="w-2.5 h-2.5 text-white absolute inset-0 m-auto" viewBox="0 0 10 10" fill="none">
@@ -84,7 +84,7 @@ function NewsletterBlock({ setView }: { setView: (v: AppView) => void }) {
                 </button>
                 <p className="text-xs" style={{ color: "var(--text-muted)" }}>
                   I agree to the{" "}
-                  <button type="button" onClick={() => setView("privacy")} className="text-violet-400 hover:underline underline-offset-2">
+                  <button type="button" onClick={() => setView("privacy")} className="text-sky-400 hover:underline underline-offset-2">
                     Privacy Policy
                   </button>
                   . Unsubscribe anytime.
@@ -185,10 +185,10 @@ const AnimatedStat = memo(function AnimatedStat({
 
 const ImportPanel = memo(function ImportPanel() {
   const methods = [
-    { icon: <FileSpreadsheet className="w-4 h-4 text-emerald-400" />, label: "CSV / Excel", tag: "drag & drop" },
+    { icon: <FileSpreadsheet className="w-4 h-4 text-sky-400" />, label: "CSV / Excel", tag: "drag & drop" },
     { icon: <Globe className="w-4 h-4 text-sky-400" />, label: "Google Sheets", tag: "live sync" },
-    { icon: <ClipboardList className="w-4 h-4 text-violet-400" />, label: "Paste Data", tag: "bulk" },
-    { icon: <Mail className="w-4 h-4 text-rose-400" />, label: "Manual Entry", tag: "one by one" },
+    { icon: <ClipboardList className="w-4 h-4 text-sky-400" />, label: "Paste Data", tag: "bulk" },
+    { icon: <Mail className="w-4 h-4 text-red-400" />, label: "Manual Entry", tag: "one by one" },
   ];
 
   return (
@@ -226,15 +226,15 @@ const ImportPanel = memo(function ImportPanel() {
         ))}
       </div>
       <div
-        className="rounded-xl p-4 flex items-center gap-3 border border-emerald-500/25"
+        className="rounded-xl p-4 flex items-center gap-3 border border-sky-500/25"
         style={{
           background: "rgba(16,185,129,0.07)",
           animation: "stepFadeSlideIn 0.5s cubic-bezier(0.16,1,0.3,1) 360ms both",
         }}
       >
-        <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+        <CheckCircle2 className="w-4 h-4 text-sky-400 flex-shrink-0" />
         <div>
-          <p className="text-emerald-300 text-sm font-semibold">247 contacts imported</p>
+          <p className="text-sky-300 text-sm font-semibold">247 contacts imported</p>
           <p className="text-xs" style={{ color: "var(--text-muted)" }}>
             Duplicates removed · Ready to send
           </p>
@@ -278,8 +278,8 @@ const LiveSendPanel = memo(function LiveSendPanel() {
         <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>
           Live Send Log
         </p>
-        <span className="flex items-center gap-1.5 text-[10px] text-emerald-400">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        <span className="flex items-center gap-1.5 text-[10px] text-sky-400">
+          <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
           Sending…
         </span>
       </div>
@@ -301,7 +301,7 @@ const LiveSendPanel = memo(function LiveSendPanel() {
         </div>
         <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
           "Hi{" "}
-          <span className="text-violet-400 font-semibold">{"{{first_name}}"}</span>! Thank
+          <span className="text-sky-400 font-semibold">{"{{first_name}}"}</span>! Thank
           you for visiting{" "}
           <span className="font-semibold" style={{ color: "var(--text-primary)" }}>
             {"{{business}}"}
@@ -327,7 +327,7 @@ const LiveSendPanel = memo(function LiveSendPanel() {
               animation: "stepFadeSlideIn 0.4s cubic-bezier(0.16,1,0.3,1) forwards",
             }}
           >
-            <Send className="w-3.5 h-3.5 text-violet-400 flex-shrink-0" />
+            <Send className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
             <div className="flex-1 min-w-0">
               <span className="text-xs font-semibold" style={{ color: "var(--text-primary)" }}>
                 {log.name}
@@ -339,10 +339,10 @@ const LiveSendPanel = memo(function LiveSendPanel() {
             <span
               className={`text-[10px] font-semibold ${
                 log.status.includes("✓")
-                  ? "text-violet-400"
+                  ? "text-sky-400"
                   : log.status === "Opened"
                   ? "text-sky-400"
-                  : "text-emerald-400"
+                  : "text-sky-400"
               }`}
             >
               {log.status}
@@ -366,31 +366,31 @@ const HappyFlowPanel = memo(function HappyFlowPanel() {
 
       {/* Happy path */}
       <div
-        className="p-5 rounded-2xl border border-emerald-500/20"
+        className="p-5 rounded-2xl border border-sky-500/20"
         style={{
           background: "rgba(16,185,129,0.07)",
           animation: "stepFadeSlideIn 0.5s cubic-bezier(0.16,1,0.3,1) 0ms both",
         }}
       >
         <div className="flex items-center gap-3 mb-3">
-          <div className="w-9 h-9 rounded-xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
-            <Star className="w-5 h-5 text-emerald-400 fill-emerald-400" />
+          <div className="w-9 h-9 rounded-xl bg-sky-500/20 flex items-center justify-center flex-shrink-0">
+            <Star className="w-5 h-5 text-sky-400 fill-sky-400" />
           </div>
           <div>
             <div className="text-sm font-bold" style={{ color: "var(--text-primary)" }}>
               4–5 Stars → Google Maps
             </div>
-            <div className="text-xs text-emerald-400">Auto-redirected with one tap</div>
+            <div className="text-xs text-sky-400">Auto-redirected with one tap</div>
           </div>
-          <ArrowRight className="w-4 h-4 text-emerald-400 ml-auto flex-shrink-0" />
+          <ArrowRight className="w-4 h-4 text-sky-400 ml-auto flex-shrink-0" />
         </div>
         <div
-          className="p-3 rounded-xl border border-emerald-500/10"
+          className="p-3 rounded-xl border border-sky-500/10"
           style={{ background: "var(--bg-surface)" }}
         >
           <div className="flex gap-0.5 mb-1.5">
             {[1, 2, 3, 4, 5].map((n) => (
-              <Star key={n} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+              <Star key={n} className="w-3.5 h-3.5 fill-red-400 text-red-400" />
             ))}
           </div>
           <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>
@@ -452,9 +452,9 @@ const HappyFlowPanel = memo(function HappyFlowPanel() {
         style={{ animation: "stepFadeSlideIn 0.5s cubic-bezier(0.16,1,0.3,1) 280ms both" }}
       >
         {[
-          { val: "78%", label: "To Google", col: "text-emerald-400" },
+          { val: "78%", label: "To Google", col: "text-sky-400" },
           { val: "22%", label: "Intercepted", col: "text-red-400" },
-          { val: "4.8★", label: "New avg", col: "text-amber-400" },
+          { val: "4.8★", label: "New avg", col: "text-red-400" },
         ].map((s) => (
           <div
             key={s.label}
@@ -496,7 +496,7 @@ const PrivateInboxPanel = memo(function PrivateInboxPanel() {
         >
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 flex items-center justify-center text-white text-xs font-bold">
+              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-red-500 to-red-500 flex items-center justify-center text-white text-xs font-bold">
                 {fb.initials}
               </div>
               <span className="text-sm font-semibold" style={{ color: "var(--text-primary)" }}>
@@ -504,11 +504,11 @@ const PrivateInboxPanel = memo(function PrivateInboxPanel() {
               </span>
             </div>
             {fb.resolved ? (
-              <span className="text-[10px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-2 py-0.5">
+              <span className="text-[10px] text-sky-400 bg-sky-500/10 border border-sky-500/20 rounded-full px-2 py-0.5">
                 Resolved
               </span>
             ) : (
-              <span className="text-[10px] text-rose-400 bg-rose-500/10 border border-rose-500/20 rounded-full px-2 py-0.5">
+              <span className="text-[10px] text-red-400 bg-red-500/10 border border-red-500/20 rounded-full px-2 py-0.5">
                 New
               </span>
             )}
@@ -519,14 +519,14 @@ const PrivateInboxPanel = memo(function PrivateInboxPanel() {
         </div>
       ))}
       <div
-        className="rounded-xl p-4 flex items-center gap-3 border border-emerald-500/20"
+        className="rounded-xl p-4 flex items-center gap-3 border border-sky-500/20"
         style={{
           background: "rgba(16,185,129,0.07)",
           animation: "stepFadeSlideIn 0.5s cubic-bezier(0.16,1,0.3,1) 260ms both",
         }}
       >
-        <Shield className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-        <p className="text-sm font-semibold text-emerald-300">
+        <Shield className="w-4 h-4 text-sky-400 flex-shrink-0" />
+        <p className="text-sm font-semibold text-sky-300">
           0 negative reviews reached Google this month
         </p>
       </div>
@@ -543,9 +543,9 @@ const STEPS = [
     body: "Upload CSV, paste emails, connect Google Sheets, or add manually. We deduplicate and validate instantly.",
     accentBg: "rgba(139,92,246,0.07)",
     accentBorder: "rgba(139,92,246,0.25)",
-    numColor: "text-violet-400",
-    iconActiveBg: "bg-violet-500",
-    progressColor: "bg-violet-500",
+    numColor: "text-sky-400",
+    iconActiveBg: "bg-sky-500",
+    progressColor: "bg-sky-500",
     panelId: 0,
   },
   {
@@ -555,9 +555,9 @@ const STEPS = [
     body: "Branded messages go to every customer — by email or SMS. Personalised with their first name and your business name.",
     accentBg: "rgba(99,102,241,0.07)",
     accentBorder: "rgba(99,102,241,0.25)",
-    numColor: "text-indigo-400",
-    iconActiveBg: "bg-indigo-500",
-    progressColor: "bg-indigo-500",
+    numColor: "text-sky-400",
+    iconActiveBg: "bg-sky-500",
+    progressColor: "bg-sky-500",
     panelId: 1,
   },
   {
@@ -567,9 +567,9 @@ const STEPS = [
     body: "Happy customers get a one-tap link to your Google Maps page. Frictionless, fast, effective.",
     accentBg: "rgba(16,185,129,0.07)",
     accentBorder: "rgba(16,185,129,0.25)",
-    numColor: "text-emerald-400",
-    iconActiveBg: "bg-emerald-500",
-    progressColor: "bg-emerald-500",
+    numColor: "text-sky-400",
+    iconActiveBg: "bg-sky-500",
+    progressColor: "bg-sky-500",
     panelId: 2,
   },
   {
@@ -579,26 +579,26 @@ const STEPS = [
     body: "Negative feedback comes only to you. Resolve it before it goes public. Protect your reputation.",
     accentBg: "rgba(239,68,68,0.07)",
     accentBorder: "rgba(239,68,68,0.25)",
-    numColor: "text-rose-400",
-    iconActiveBg: "bg-rose-500",
-    progressColor: "bg-rose-500",
+    numColor: "text-red-400",
+    iconActiveBg: "bg-red-500",
+    progressColor: "bg-red-500",
     panelId: 3,
   },
 ];
 
 const FEATURES = [
-  { icon: Zap, color: "text-violet-400", bg: "bg-violet-500/10", title: "10-Minute Setup", body: "No code, no agency. Import contacts and launch your first campaign in minutes." },
-  { icon: Shield, color: "text-emerald-400", bg: "bg-emerald-500/10", title: "Reputation Firewall", body: "Negative feedback is intercepted before it can reach Google. Goes only to your private dashboard." },
-  { icon: BarChart3, color: "text-indigo-400", bg: "bg-indigo-500/10", title: "Real-Time Analytics", body: "Track open rates, sentiment, and Google conversions from one clean, focused dashboard." },
+  { icon: Zap, color: "text-sky-400", bg: "bg-sky-500/10", title: "10-Minute Setup", body: "No code, no agency. Import contacts and launch your first campaign in minutes." },
+  { icon: Shield, color: "text-sky-400", bg: "bg-sky-500/10", title: "Reputation Firewall", body: "Negative feedback is intercepted before it can reach Google. Goes only to your private dashboard." },
+  { icon: BarChart3, color: "text-sky-400", bg: "bg-sky-500/10", title: "Real-Time Analytics", body: "Track open rates, sentiment, and Google conversions from one clean, focused dashboard." },
   { icon: Globe, color: "text-sky-400", bg: "bg-sky-500/10", title: "Email + SMS Outreach", body: "Reach customers on any channel. Let Repute pick the best channel per contact automatically." },
-  { icon: Lock, color: "text-amber-400", bg: "bg-amber-500/10", title: "GDPR Compliant", body: "Built-in unsubscribe links, opt-out tracking, and full CAN-SPAM, CASL, and GDPR compliance." },
-  { icon: TrendingUp, color: "text-rose-400", bg: "bg-rose-500/10", title: "+0.8★ Avg Increase", body: "Businesses using Repute see a measurable rating increase within their first 60 days." },
+  { icon: Lock, color: "text-red-400", bg: "bg-red-500/10", title: "GDPR Compliant", body: "Built-in unsubscribe links, opt-out tracking, and full CAN-SPAM, CASL, and GDPR compliance." },
+  { icon: TrendingUp, color: "text-red-400", bg: "bg-red-500/10", title: "+0.8★ Avg Increase", body: "Businesses using Repute see a measurable rating increase within their first 60 days." },
 ];
 
 const TESTIMONIALS = [
-  { quote: "We went from 3.8 to 4.7 stars in 6 weeks. Repute intercepted 14 potential 1-star reviews and turned them into resolved complaints.", name: "Marina Reyes", role: "Owner, The Grand Palms Hotel", initials: "MR", grad: "from-violet-500 to-indigo-600", badge: "+0.9★ in 6 weeks", badgeColor: "bg-amber-500/10 text-amber-400 border border-amber-500/20" },
-  { quote: "Thirty unhappy customers after a rough night — all sent to our private inbox instead of Google. Absolute reputation saver.", name: "James Okafor", role: "GM, Bella Vista Restaurant", initials: "JO", grad: "from-emerald-500 to-teal-600", badge: "30 reviews saved", badgeColor: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" },
-  { quote: "22 new 5-star reviews in the first week. We went from page 3 to the top 3 in local search. The ROI is ridiculous.", name: "Sofia Chen", role: "Director, Luxe Auto Detailing", initials: "SC", grad: "from-rose-500 to-pink-600", badge: "Page 3 → Top 3", badgeColor: "bg-indigo-500/10 text-indigo-400 border border-indigo-500/20" },
+  { quote: "We went from 3.8 to 4.7 stars in 6 weeks. Repute intercepted 14 potential 1-star reviews and turned them into resolved complaints.", name: "Marina Reyes", role: "Owner, The Grand Palms Hotel", initials: "MR", grad: "from-sky-500 to-sky-600", badge: "+0.9★ in 6 weeks", badgeColor: "bg-red-500/10 text-red-400 border border-red-500/20" },
+  { quote: "Thirty unhappy customers after a rough night — all sent to our private inbox instead of Google. Absolute reputation saver.", name: "James Okafor", role: "GM, Bella Vista Restaurant", initials: "JO", grad: "from-sky-500 to-sky-600", badge: "30 reviews saved", badgeColor: "bg-sky-500/10 text-sky-400 border border-sky-500/20" },
+  { quote: "22 new 5-star reviews in the first week. We went from page 3 to the top 3 in local search. The ROI is ridiculous.", name: "Sofia Chen", role: "Director, Luxe Auto Detailing", initials: "SC", grad: "from-red-500 to-red-600", badge: "Page 3 → Top 3", badgeColor: "bg-sky-500/10 text-sky-400 border border-sky-500/20" },
 ];
 
 const FAQS = [
@@ -700,7 +700,7 @@ export function LandingPage({ setView }: LandingPageProps) {
       <section className="py-36" style={{ background: "var(--bg-surface)" }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-20 reveal">
-            <p className="text-violet-400 font-bold text-xs uppercase tracking-widest mb-4">
+            <p className="text-sky-400 font-bold text-xs uppercase tracking-widest mb-4">
               How it works
             </p>
             <h2
@@ -799,7 +799,7 @@ export function LandingPage({ setView }: LandingPageProps) {
                     onClick={() => goToStep(i)}
                     className={`rounded-full transition-all duration-300 ${
                       activeStep === i
-                        ? "w-6 h-2 bg-violet-400"
+                        ? "w-6 h-2 bg-sky-400"
                         : "w-2 h-2 bg-zinc-700 hover:bg-zinc-500"
                     }`}
                   />
@@ -838,7 +838,7 @@ export function LandingPage({ setView }: LandingPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-10 reveal-left">
               <div>
-                <p className="text-violet-400 font-bold text-xs uppercase tracking-widest mb-4">
+                <p className="text-sky-400 font-bold text-xs uppercase tracking-widest mb-4">
                   The customer experience
                 </p>
                 <h2
@@ -853,9 +853,9 @@ export function LandingPage({ setView }: LandingPageProps) {
               </div>
               <div className="space-y-6">
                 {[
-                  { icon: <BadgeCheck className="w-4 h-4 text-violet-400" />, title: "Branded & personal", body: "Messages use your business name and the customer's first name. Feels human, not automated." },
-                  { icon: <Zap className="w-4 h-4 text-indigo-400" />, title: "One-tap response", body: "No forms to fill out. Happy or unhappy — one tap and the system handles everything." },
-                  { icon: <Shield className="w-4 h-4 text-emerald-400" />, title: "Private by default", body: "Negative feedback never touches a public platform. Goes straight to your inbox." },
+                  { icon: <BadgeCheck className="w-4 h-4 text-sky-400" />, title: "Branded & personal", body: "Messages use your business name and the customer's first name. Feels human, not automated." },
+                  { icon: <Zap className="w-4 h-4 text-sky-400" />, title: "One-tap response", body: "No forms to fill out. Happy or unhappy — one tap and the system handles everything." },
+                  { icon: <Shield className="w-4 h-4 text-sky-400" />, title: "Private by default", body: "Negative feedback never touches a public platform. Goes straight to your inbox." },
                 ].map((item) => (
                   <div key={item.title} className="flex items-start gap-4">
                     <div
@@ -891,25 +891,25 @@ export function LandingPage({ setView }: LandingPageProps) {
                       <span className="font-semibold">9:41</span>
                       <span className="text-zinc-600 text-[10px]">●●●</span>
                     </div>
-                    <div className="bg-gradient-to-r from-violet-700 to-indigo-700 px-4 py-3.5 flex items-center gap-2.5">
+                    <div className="bg-gradient-to-r from-sky-700 to-sky-700 px-4 py-3.5 flex items-center gap-2.5">
                       <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center border border-white/15 flex-shrink-0">
                         <Hotel className="w-4 h-4 text-white" />
                       </div>
                       <div>
                         <p className="text-white font-bold text-xs">The Grand Palms Hotel</p>
-                        <p className="text-violet-200 text-[10px] flex items-center gap-1">
+                        <p className="text-sky-200 text-[10px] flex items-center gap-1">
                           <BadgeCheck className="w-2.5 h-2.5" /> via Repute
                         </p>
                       </div>
                     </div>
                     <div className="px-4 py-5 space-y-4">
                       <div className="flex gap-2 items-end">
-                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center flex-shrink-0">
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-sky-600 to-sky-600 flex items-center justify-center flex-shrink-0">
                           <Hotel className="w-3 h-3 text-white" />
                         </div>
                         <div className="bg-zinc-800 rounded-2xl rounded-bl-sm px-3 py-2.5 max-w-[82%]">
                           <p className="text-zinc-200 text-xs leading-relaxed">
-                            Hi <span className="text-violet-300 font-semibold">Maria</span>! 👋 Thank
+                            Hi <span className="text-sky-300 font-semibold">Maria</span>! 👋 Thank
                             you for staying with us. How was your experience?
                           </p>
                           <p className="text-zinc-700 text-[10px] mt-1">Just now</p>
@@ -922,7 +922,7 @@ export function LandingPage({ setView }: LandingPageProps) {
                         </p>
                         {phoneState === "ask" && (
                           <>
-                            <button className="w-full bg-emerald-600 text-white rounded-xl py-2.5 text-xs font-semibold flex items-center justify-center gap-1.5">
+                            <button className="w-full bg-sky-600 text-white rounded-xl py-2.5 text-xs font-semibold flex items-center justify-center gap-1.5">
                               <ThumbsUp className="w-3.5 h-3.5" /> Loved it 🎉
                             </button>
                             <button className="w-full bg-zinc-700 text-zinc-300 rounded-xl py-2.5 text-xs font-semibold flex items-center justify-center gap-1.5">
@@ -932,28 +932,28 @@ export function LandingPage({ setView }: LandingPageProps) {
                         )}
                         {phoneState === "positive" && (
                           <>
-                            <div className="bg-emerald-900/30 border border-emerald-600/20 rounded-xl p-2.5 text-center">
+                            <div className="bg-sky-900/30 border border-sky-600/20 rounded-xl p-2.5 text-center">
                               <p className="text-lg mb-0.5">🎉</p>
-                              <p className="text-emerald-300 text-[10px] font-semibold">
+                              <p className="text-sky-300 text-[10px] font-semibold">
                                 Awesome! Share it on Google
                               </p>
                             </div>
-                            <button className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl py-2.5 text-xs font-bold flex items-center justify-center gap-1.5">
+                            <button className="w-full bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-xl py-2.5 text-xs font-bold flex items-center justify-center gap-1.5">
                               <Star className="w-3.5 h-3.5 fill-white" /> Leave a Google Review
                             </button>
                           </>
                         )}
                         {phoneState === "negative" && (
                           <>
-                            <div className="bg-rose-900/20 border border-rose-600/20 rounded-xl p-2.5 text-center">
-                              <p className="text-rose-300 text-[10px] font-semibold mb-0.5">
+                            <div className="bg-red-900/20 border border-red-600/20 rounded-xl p-2.5 text-center">
+                              <p className="text-red-300 text-[10px] font-semibold mb-0.5">
                                 We're sorry to hear that 💙
                               </p>
                               <p className="text-zinc-600 text-[10px]">
                                 Your feedback goes to management
                               </p>
                             </div>
-                            <button className="w-full bg-indigo-600 text-white rounded-xl py-2.5 text-xs font-semibold">
+                            <button className="w-full bg-sky-600 text-white rounded-xl py-2.5 text-xs font-semibold">
                               Send Private Feedback →
                             </button>
                           </>
@@ -965,7 +965,7 @@ export function LandingPage({ setView }: LandingPageProps) {
                           <div
                             key={i}
                             className={`h-1 rounded-full transition-all duration-500 ${
-                              phoneState === s ? "w-5 bg-violet-500" : "w-1 bg-zinc-800"
+                              phoneState === s ? "w-5 bg-sky-500" : "w-1 bg-zinc-800"
                             }`}
                           />
                         ))}
@@ -976,8 +976,8 @@ export function LandingPage({ setView }: LandingPageProps) {
 
                 {/* Floating badges — no backdrop-blur (expensive), solid bg instead */}
                 <div className="absolute -right-16 top-16 float-badge bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl px-3.5 py-2.5 flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-emerald-500/15 flex items-center justify-center flex-shrink-0">
-                    <Star className="w-3 h-3 text-emerald-400 fill-emerald-400" />
+                  <div className="w-6 h-6 rounded-full bg-sky-500/15 flex items-center justify-center flex-shrink-0">
+                    <Star className="w-3 h-3 text-sky-400 fill-sky-400" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-white leading-none">New 5★ Review!</p>
@@ -985,8 +985,8 @@ export function LandingPage({ setView }: LandingPageProps) {
                   </div>
                 </div>
                 <div className="absolute -left-16 bottom-24 float-badge-slow bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl px-3.5 py-2.5 flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-violet-500/15 flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-3 h-3 text-violet-400" />
+                  <div className="w-6 h-6 rounded-full bg-sky-500/15 flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-3 h-3 text-sky-400" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-white leading-none">Intercepted</p>
@@ -1003,7 +1003,7 @@ export function LandingPage({ setView }: LandingPageProps) {
       <section className="py-36" style={{ background: "var(--bg-surface)" }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="mb-20 reveal">
-            <p className="text-violet-400 font-bold text-xs uppercase tracking-widest mb-4">
+            <p className="text-sky-400 font-bold text-xs uppercase tracking-widest mb-4">
               Features
             </p>
             <h2
@@ -1057,7 +1057,7 @@ export function LandingPage({ setView }: LandingPageProps) {
       <section className="py-36" style={{ background: "var(--bg-base)" }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="mb-20 reveal">
-            <p className="text-amber-400 font-bold text-xs uppercase tracking-widest mb-4">
+            <p className="text-red-400 font-bold text-xs uppercase tracking-widest mb-4">
               Results
             </p>
             <h2
@@ -1086,7 +1086,7 @@ export function LandingPage({ setView }: LandingPageProps) {
               >
                 <div className="flex gap-1">
                   {[1, 2, 3, 4, 5].map((s) => (
-                    <Star key={s} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+                    <Star key={s} className="w-3.5 h-3.5 text-red-400 fill-red-400" />
                   ))}
                 </div>
                 <span className={`self-start text-xs font-bold px-3 py-1 rounded-full ${t.badgeColor}`}>
@@ -1124,7 +1124,7 @@ export function LandingPage({ setView }: LandingPageProps) {
       <section className="py-36" style={{ background: "var(--bg-surface)" }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-20 reveal">
-            <p className="text-indigo-400 font-bold text-xs uppercase tracking-widest mb-4">
+            <p className="text-sky-400 font-bold text-xs uppercase tracking-widest mb-4">
               Pricing
             </p>
             <h2
@@ -1151,7 +1151,7 @@ export function LandingPage({ setView }: LandingPageProps) {
               >
                 {plan.highlight && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-violet-500 to-indigo-600 text-white text-[10px] font-black rounded-full px-4 py-1.5 whitespace-nowrap shadow-lg">
+                    <span className="bg-gradient-to-r from-sky-500 to-sky-600 text-white text-[10px] font-black rounded-full px-4 py-1.5 whitespace-nowrap shadow-lg">
                       MOST POPULAR
                     </span>
                   </div>
@@ -1177,7 +1177,7 @@ export function LandingPage({ setView }: LandingPageProps) {
                     <li key={feat} className="flex items-center gap-2.5 text-sm">
                       <CheckCircle2
                         className={`w-4 h-4 flex-shrink-0 ${
-                          plan.highlight ? "text-violet-400" : "text-zinc-600"
+                          plan.highlight ? "text-sky-400" : "text-zinc-600"
                         }`}
                       />
                       <span style={{ color: "var(--text-secondary)" }}>{feat}</span>
@@ -1190,7 +1190,7 @@ export function LandingPage({ setView }: LandingPageProps) {
                   style={
                     plan.highlight
                       ? {
-                          background: "linear-gradient(to right, #8b5cf6, #6366f1)",
+                          background: "linear-gradient(to right, #0ea5e9, #0284c7)",
                           color: "#fff",
                           boxShadow: "0 10px 30px rgba(139,92,246,0.25)",
                         }
@@ -1246,7 +1246,7 @@ export function LandingPage({ setView }: LandingPageProps) {
                   </span>
                   <ChevronDown
                     className={`w-4 h-4 flex-shrink-0 transition-transform duration-300 ${
-                      activeFaq === i ? "rotate-180 text-violet-400" : "text-zinc-600"
+                      activeFaq === i ? "rotate-180 text-sky-400" : "text-zinc-600"
                     }`}
                   />
                 </button>
@@ -1290,7 +1290,7 @@ export function LandingPage({ setView }: LandingPageProps) {
         <div className="relative z-10 max-w-2xl mx-auto px-6 text-center reveal">
           <div className="flex justify-center gap-1 mb-8">
             {[1, 2, 3, 4, 5].map((s) => (
-              <Star key={s} className="w-4 h-4 text-amber-400 fill-amber-400" />
+              <Star key={s} className="w-4 h-4 text-red-400 fill-red-400" />
             ))}
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-white leading-[1.05] mb-6">
@@ -1317,7 +1317,7 @@ export function LandingPage({ setView }: LandingPageProps) {
               "Cancel anytime",
             ].map((t) => (
               <span key={t} className="flex items-center gap-1.5 text-xs text-white/30">
-                <CheckCircle2 className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                <CheckCircle2 className="w-3 h-3 text-sky-400 flex-shrink-0" />
                 {t}
               </span>
             ))}
@@ -1341,7 +1341,7 @@ export function LandingPage({ setView }: LandingPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
             <div className="md:col-span-5">
               <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center">
                   <MessageSquareHeart className="w-4 h-4 text-white" />
                 </div>
                 <span className="font-black text-lg" style={{ color: "var(--text-primary)" }}>
@@ -1374,7 +1374,7 @@ export function LandingPage({ setView }: LandingPageProps) {
               <ul className="space-y-3.5">
                 {["How it Works", "Features", "Pricing", "Integrations", "API Docs"].map((l) => (
                   <li key={l}>
-                    <a href="#" className="text-sm transition-colors hover:text-violet-400" style={{ color: "var(--text-muted)" }}>
+                    <a href="#" className="text-sm transition-colors hover:text-sky-400" style={{ color: "var(--text-muted)" }}>
                       {l}
                     </a>
                   </li>
@@ -1389,7 +1389,7 @@ export function LandingPage({ setView }: LandingPageProps) {
                 <li>
                   <button
                     onClick={() => setView("terms")}
-                    className="text-sm transition-colors hover:text-violet-400 text-left"
+                    className="text-sm transition-colors hover:text-sky-400 text-left"
                     style={{ color: "var(--text-muted)" }}
                   >
                     Terms of Service
@@ -1398,19 +1398,19 @@ export function LandingPage({ setView }: LandingPageProps) {
                 <li>
                   <button
                     onClick={() => setView("privacy")}
-                    className="text-sm transition-colors hover:text-violet-400 text-left"
+                    className="text-sm transition-colors hover:text-sky-400 text-left"
                     style={{ color: "var(--text-muted)" }}
                   >
                     Privacy Policy
                   </button>
                 </li>
                 <li>
-                  <a href="#" className="text-sm transition-colors hover:text-violet-400" style={{ color: "var(--text-muted)" }}>
+                  <a href="#" className="text-sm transition-colors hover:text-sky-400" style={{ color: "var(--text-muted)" }}>
                     Cookie Policy
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:legal@repute.app" className="text-sm transition-colors hover:text-violet-400" style={{ color: "var(--text-muted)" }}>
+                  <a href="mailto:legal@repute.app" className="text-sm transition-colors hover:text-sky-400" style={{ color: "var(--text-muted)" }}>
                     legal@repute.app
                   </a>
                 </li>
@@ -1425,10 +1425,10 @@ export function LandingPage({ setView }: LandingPageProps) {
               © {new Date().getFullYear()} Repute, Inc. All rights reserved. · San Francisco, CA
             </p>
             <div className="flex items-center gap-5">
-              <button onClick={() => setView("terms")} className="text-xs hover:text-violet-400 transition-colors" style={{ color: "var(--text-muted)" }}>
+              <button onClick={() => setView("terms")} className="text-xs hover:text-sky-400 transition-colors" style={{ color: "var(--text-muted)" }}>
                 Terms
               </button>
-              <button onClick={() => setView("privacy")} className="text-xs hover:text-violet-400 transition-colors" style={{ color: "var(--text-muted)" }}>
+              <button onClick={() => setView("privacy")} className="text-xs hover:text-sky-400 transition-colors" style={{ color: "var(--text-muted)" }}>
                 Privacy
               </button>
               <span className="text-xs" style={{ color: "var(--text-muted)" }}>
